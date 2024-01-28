@@ -49,7 +49,7 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 - ordinateur: [Apple Mac Mini - Apple M2 Pro](https://www.apple.com/newsroom/2023/01/apple-introduces-new-mac-mini-with-m2-and-m2-pro-more-powerful-capable-and-versatile-than-ever/)
 
-- système d'exploitation: [macOS Sonoma 14.3](https://support.apple.com/en-us/HT213843)
+- système d'exploitation: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
 
 - IDE: [Visual Studio Code 1.85.2](https://code.visualstudio.com/)
 
