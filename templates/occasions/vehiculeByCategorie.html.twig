@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vincent Parrot - Vehicules Occasion
+{% endblock %}
+{#{% block javascripts %}
+	<script src="{{ asset('assets/js/script_occasions.js') }}" defer></script>
+{% endblock %}#}
+{% block body %}
+	<div class="container">
+		<br>
+		<h1>Notre sélection de véhicules de la categorie "
+			{{categorie.libelle}} "</h1><br>
+		{% if occasions|length<1 %}
+			<h3>Aucun vehicule dans cet categorie</h3>
+		{% endif %}
+	</div>
+	{% include "occasions/_rechercherfiltrer.html.twig" %}
+	<div class="bs-docs-section">
+		<div class="container">
+			<div class="row">
+				{% for _occasion in occasions %}
+					<div class="col-lg-3">
+						<div class="card mb-3">
+							<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="card-link">
+								<h4 class="card-header">{{_occasion.modele}}</h4>
+							</a>
+							<div class="card-body">
+								<h5 class="card-title">Prix:
+									{{_occasion.prix | number_format(0, ',', ' ')}}
+									€</h5>
+								<h6 class="card-subtitle text-muted">Année:
+									{{_occasion.annee}}</h6>
+								<h6 class="card-subtitle text-muted">Kilometrage:
+									{{_occasion.Kilometrage | number_format(0, ',', ' ')}}
+									- km
+								</h6>
+							</div>
+							{#<img class="img-fluid rounded" src="{{ vich_uploader_asset(_occasion, 'VoituresImages') }}" alt="Image vehicule">#}
+							{% for image in _occasion.VehiculeImages %}
+								<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="">
+									<div class="carousel-item {% if loop.first %}active{% endif %}">
+										<img src="{{ vich_uploader_asset(image, 'imageFile') }}" id="{{ _occasion.modele }}" class="d-block w-100" alt="{{ _occasion.modele }}">
+									</div>
+								</a>
+							{% endfor %}
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Categorie de véhicule : {{_occasion.categorie}}</li>
+								<li class="list-group-item">Marque & Modele : {{_occasion.modele}}</li>
+								<li class="list-group-item">Type de véhicule : {{_occasion.type}}</li>
+								<li class="list-group-item">Carburant : {{_occasion.carburant}}</li>
+							</ul>
+							<div class="card-body">
+								<h5>Descrition</h5>
+								<p class="card-text">{{_occasion.description|slice(0,60)}}...</p>
+							</div>
+							<div class="card-body">
+								<h5>Options</h5>
+								<p class="card-text">{{_occasion.options|slice(0,60)}}...</p>
+							</div>
+							<div class="card-body">
+								<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="card-link">Plus d'info</a>
+							</div>
+							<div class="card-footer text-muted"></div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

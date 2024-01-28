@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicules Occasion - Garage Automobile Vincent Parrot{% endblock %}
+{#{% block javascripts %}
+	<script src="{{ asset('assets/js/script_occasions.js') }}" defer></script>
+{% endblock %}#}
+{% block body %}
+	<div class="container">
+		<h1 class="mt-5 mb-5">Notre sélection de véhicules d'occasion</h1>
+	</div>
+	<div class="container js-filter">
+		<div class="row">
+			<div class="col-md-3">
+				{#{% include "occasions/_rechercherfiltrer.html.twig" %}#}
+				{% include 'occasions/_filter.html.twig' with {form: form, prixmin:prixmin, prixmax:prixmax, kmmin:kmmin, kmmax:kmmax, anneemin:anneemin, anneemax:anneemax} only %}
+			</div>
+			<div class="col-12 col-md-9 col-sm">
+			    <div class="d-flex justify-content-end mb-2 js-filter-sorting">
+				    {% include 'occasions/_sorting.html.twig' %}
+			    </div>
+				<div class="grid js-filter-content">
+					 
+					{% include 'occasions/_occasions.html.twig' %}
+					
+				</div>
+				<div class="mt-2 mb-2 js-filter-pagination">
+					{% include 'occasions/_pagination.html.twig' %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

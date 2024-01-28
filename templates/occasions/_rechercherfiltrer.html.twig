@@ -1,0 +1,122 @@
+<div class="bs-docs-section">
+	<div class="container">
+		<div class="row">
+			<h4 class="Mt-3 mb-3">Rechercher des véhicules par:</h4>
+    		<div class="col-md-12">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm" id="marqueSelect">
+						<option selected>Marque...</option>
+						{% for marque in marqueList %}
+							<option value="{{ path('app_occcasions_marque_show',{'id':marque.id}) }}">{{marque.nom}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+    		<div class="col-md-12">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm " id="modeleSelect">
+						<option selected>Modele...</option>
+						{% for modele in modeleList %}
+							<option value="{{ path('app_occcasions_modele_show',{'id':modele.id}) }}">{{modele.nom}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+    		<div class="col-md-12">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" aria-label="Default select example" id="categorieSelect">
+						<option selected>Catégorie vehicule...</option>
+						{% for categorie in categorieList %}
+							<option value="{{ path('app_occcasions_categorie_show',{'id':categorie.id}) }}">{{categorie.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+    		<div class="col-md-12">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" id="typeSelect">
+						<option selected>Type carrosserie...</option>
+						{% for type in typeList %}
+							<option value="{{ path('app_occcasions_type_show',{'id':type.id}) }}">{{type.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+    		<div class="col-md-12">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" id="carburantSelect">
+						<option selected>Carburant...</option>
+						{% for carburant in carburantList %}
+							<option value="{{ path('app_occcasions_carburant_show',{'id':carburant.id}) }}">{{carburant.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+		</div>
+		{#}
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm" id="marqueSelect">
+						<option selected>Marque...</option>
+						{% for marque in marqueList %}
+							<option value="{{ path('app_occcasions_marque_show',{'id':marque.id}) }}">{{marque.nom}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm " id="modeleSelect">
+						<option selected>Modele...</option>
+						{% for modele in modeleList %}
+							<option value="{{ path('app_occcasions_modele_show',{'id':modele.id}) }}">{{modele.nom}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" aria-label="Default select example" id="categorieSelect">
+						<option selected>Catégorie vehicule...</option>
+						{% for categorie in categorieList %}
+							<option value="{{ path('app_occcasions_categorie_show',{'id':categorie.id}) }}">{{categorie.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" id="typeSelect">
+						<option selected>Type carrosserie...</option>
+						{% for type in typeList %}
+							<option value="{{ path('app_occcasions_type_show',{'id':type.id}) }}">{{type.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="col-auto my-1">
+					<select class="form-select form-select-sm mr-sm-2" id="carburantSelect">
+						<option selected>Carburant...</option>
+						{% for carburant in carburantList %}
+							<option value="{{ path('app_occcasions_carburant_show',{'id':carburant.id}) }}">{{carburant.libelle}}</option>
+						{% endfor %}
+					</select>
+				</div>
+			</div>
+			<br><br>
+			<h4 class="">Filtrer la recherche des véhicules par:</h4>
+
+			<br><br>
+		</div>#}
+	</div>
+</div>

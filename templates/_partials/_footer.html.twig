@@ -1,0 +1,35 @@
+<footer class="container-fluid bg-dark text-white text-center py-2">
+	<div class="row">
+		<div class="col-md-4 mb-3">
+			<table class="" id="openingHoursTable">
+				<thead>
+					<tr>
+						<th scoop="col" colspan="2">Horaire d'ouverture</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for _horaire in horaire.getHoraire %}
+						<tr>
+							<th scoope="row" class="">{{_horaire.jour}}:</th>
+							<td class="" id="{{_horaire.jour}}">
+								{{_horaire.ouverturematin}}-{{_horaire.fermeturemidi}},
+								{{_horaire.ouvertureapresmidi}}-{{_horaire.fermeturesoir}}
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-4 mt-3 mb-3">
+			© Copyright 2024
+		</div>
+		<div class="col-md-4 mt-3">
+			<a class="nav-link" href="{{path('page_cgu')}}">CGU</a>
+			<a class="nav-link" href="{{path('mentions_legales')}}">Mentions légales</a>
+			<p><br><br>
+				<i class="fa-solid fa-location-dot fa-bounce"></i>
+				Adresse :<a class="nav-link" href="https://goo.gl/maps/s761phYgSsD2Vii78" target="_blank">Toulouse, France</a>
+			</p>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block title %}Page non trouvée{% endblock %}
+{% block body %}
+    <div class="container w-75">
+        <section class="row">
+            <div class="col-12">
+                <h1>Page non trouvée</h1>
+                <p>La page que vous recherchez n'a pas été trouvée.</p>
+                <p>Code de l'erreur : {{ status_code }}</p>
+                <p>Message de l'erreur : {{ status_text }}</p>
+                <p>Message personnalisé : {{ exception.message }}</p>
+                <p><a href="{{ path('app_home')}}">ACCUEIL</a></p>
+            </div>
+        </section>
+    </div>
+{% endblock %}

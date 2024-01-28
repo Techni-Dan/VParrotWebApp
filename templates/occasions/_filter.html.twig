@@ -1,0 +1,78 @@
+{{ form_start(form, {attr: {class: 'filter js-filter-form'}}) }}
+
+  <div class="spinner-border js-loading" role="status" aria-hidden="true" style="display: none">
+    <span class="sr-only">Chargement...</span>
+  </div>
+  <h2 class="mt-5 mb-3">Filtrer les véhicules:</h2>
+  <h4>Prix</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.prixmin, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.prixmax, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+  </div>
+  <div class="mx-2" id="prix-slider" data-min="{{ prixmin }}" data-max="{{ prixmax }}" style="margin-bottom: 3rem;"></div>
+
+  <h4>Kilométrage</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.kmmin, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.kmmax, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+  </div>
+  <div class="mx-2" id="km-slider" data-min="{{ kmmin }}" data-max="{{ kmmax }}" style="margin-bottom: 3rem;"></div>
+
+    <h4>Année</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.anneemin, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+    <div class="col-md-6">
+      {{ form_row(form.anneemax, {'attr': {'readonly': 'readonly'}}) }}
+    </div>
+  </div>
+  <div class="mx-2" id="annee-slider" data-min="{{ anneemin }}" data-max="{{ anneemax }}" style="margin-bottom: 3rem;"></div>
+
+  <h4>Marques:</h4>
+  <div class="row">
+    <div class="col-md-12">
+     {{ form_row(form.marque, { 'attr': {} }) }}    
+    </div>
+  </div>
+
+  <h4>Modele:</h4>
+  <div class="row">
+    <div class="col-md-12">
+     {{ form_row(form.modele, { 'attr': {} }) }}    
+    </div>
+  </div>
+
+ <h4>Catégories:</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.categorie) }}
+    </div>
+  </div>
+  
+  <h4>Type carrosserie:</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.type) }}
+    </div>
+  </div>
+  
+  <h4>Carburant vehicules:</h4>
+  <div class="row">
+    <div class="col-md-6">
+      {{ form_row(form.carburant) }}
+    </div>
+  </div>
+
+{#<button type="submit" class="btn btn-primary w-100">Filtrer</button>#}
+<a class="btn btn-primary mt-2 mb-3 w-100" href="{{path('app_occasions_page')}}">Réinitialiser les filtres</a>
+
+{{ form_end(form) }}

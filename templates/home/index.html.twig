@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+{% block title %}Garage Vincen Parrot
+{% endblock %}
+{% block body %}
+	<div class="container mt-3 mb-3">
+		<h1 class="">Garage Vincent PARROT - réparation automobile à Toulouse
+		</h1>
+	</div>
+	<div class="raw">
+		<div class="container mb-3">
+			<div class="card-group">
+				{% for _service in services %}
+					<div class="card">
+						<img class="img-fluid rounded" src="{{ vich_uploader_asset(_service, 'imageFile') }}" alt="Réparation">
+						<div class="card-body">
+							<h2 class="card-title">{{ _service.titre }}</h2>
+							<p class="card-text mt-3">{{ _service.description1 }}</p>
+							<p class="card-text">{{ _service.description2 }}</p>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item list-group-item-primary">Liste services:</li>
+								<li class="list-group-item list-group-item-info">{{ _service.listeitem1 }}</li>
+								<li class="list-group-item list-group-item-info">{{ _service.listeitem2 }}</li>
+								<li class="list-group-item list-group-item-info">{{ _service.listeitem3 }}</li>
+								<li class="list-group-item list-group-item-info">{{ _service.listeitem4 }}</li>
+								<li class="list-group-item list-group-item-info">{{ _service.listeitem5 }}</li>
+							</ul>
+							<p class="card-text mt-3">{{ _service.description3 }}</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-muted"></small>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="raw">
+		<div class="container mb-3">
+			<div class="card-group">
+				<div class="card">
+					<a href="{{path('app_occasions_page')}}" class="card-link">
+						<img src="/images/services/audi.png" class="card-img-top" alt="Vehicule">
+					</a>
+					<div class="card-body">
+						<a href="{{path('app_occasions_page')}}" class="card-link">
+							<h2 class="card-title">Vente des véhicules d'occasion</h2>
+						</a>
+						<p class="card-text">Découvrez notre sélection soigneusement choisie de voitures d'occasion de qualité. Que vous recherchiez une berline élégante, un SUV spacieux ou une compacte économique, nous avons le véhicule qui correspond à vos besoins.</p>
+						<p class="card-text">Chez nous, vous bénéficierez d'une expérience d'achat transparente et sans tracas. Chaque véhicule a été minutieusement inspecté par nos experts pour garantir sa fiabilité et sa performance. De plus, nous fournissons un historique complet du véhicule, afin que vous puissiez prendre une décision éclairée en toute confiance.</p>
+						<p class="card-text">Notre équipe de professionnels expérimentés est là pour vous guider à chaque étape du processus d'achat. Nous répondrons à toutes vos questions, vous fournirons des informations détaillées sur nos véhicules et vous accompagnerons dans vos démarches administratives.</p>
+					</div>
+					<div class="card-footer">
+						<small class="text-muted"></small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="raw">
+		<div class="container mb-3">
+			<h2>Témoignages</h2>
+			<ul class="testimonials">
+				{% for _temoignage in temoignages %}
+					<li class="testimony">
+						<div>
+							{% if _temoignage.note == 1 %}
+								<p class="testimony-content">⭐</p>
+							{% elseif _temoignage.note == 2 %}
+								<p class="testimony-content">⭐⭐</p>
+							{% elseif _temoignage.note == 3 %}
+								<p class="testimony-content">⭐⭐⭐</p>
+							{% elseif _temoignage.note == 4 %}
+								<p class="testimony-content">⭐⭐⭐⭐</p>
+							{% elseif _temoignage.note == 5 %}
+								<p class="testimony-content">⭐⭐⭐⭐⭐</p>
+							{% endif %}
+							<h3 class="testimony-title">{{ _temoignage.nom }}</h3>
+							<div class="testimony-content">
+								<p>{{ _temoignage.commentaire }}</p>
+							</div>
+							<h3 class="testimony-date">Date: {{ _temoignage.updatedAt|date('d-m-Y H:i:s') }}</h3>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="">
+		<div class="temoignageForm mb-3">
+			<h3>Envoyez nous un commentaire !</h3>
+			<div class="bg-white p-2">
+				<div class="form-group">
+					{{ form_start(temoignage_form) }}
+					{{ form_row(temoignage_form.nom, {'attr': {'class': 'form-control', 'placeholder' :'Votre nom'}}) }}
+					<div class="form-group">
+						{{ form_row(temoignage_form.note, {'attr': {'class': 'form-control', 'placeholder' :'Numéro de 1 à 5'}}) }}
+					</div>
+					<div class="form-group">
+						{{ form_row(temoignage_form.commentaire, {'attr': {'class': 'form-control', 'placeholder' :' Maximum de 500 caractères'}}) }}
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Envoyer" class="btn btn-primary py-2 px-2">
+					</div>
+					{{ form_end(temoignage_form) }}
+					{% for message in app.flashes('success') %}
+						<div class="flash-success">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

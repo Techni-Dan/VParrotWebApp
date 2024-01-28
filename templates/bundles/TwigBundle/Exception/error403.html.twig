@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}Accès interdit{% endblock %}
+{% block body %}
+    <div class="container w-75">
+        <section class="row">
+            <div class="col-12">
+                <h1>Accès interdit</h1>
+                <p>Vous n'avez pas la permission de voir cette page</p>
+                <p>Code de l'erreur : {{ status_code }}</p>
+                <p>Message de l'erreur : {{ status_text }}</p>
+                <p><a href="{{ path('app_login')}}">Connexion</a></p>
+            </div>
+        </section>
+    </div>
+{% endblock %}

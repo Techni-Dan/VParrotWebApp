@@ -1,0 +1,3 @@
+{% for _occasion in occasions %}
+	{% include 'occasions/_card.html.twig' with {_occasion: _occasion} only %}
+{% endfor %}

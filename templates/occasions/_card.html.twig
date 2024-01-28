@@ -1,0 +1,52 @@
+<div class="card mb-3" id="occasion-{{ _occasion.id }}">
+	<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="card-link">
+		<h4 class="card-header">{{_occasion.titre}}</h4>
+	</a>
+	<div class="card-body">
+		<h5 class="card-title text-primary">Prix:
+			{{_occasion.prix | number_format(0, ',', ' ')}}
+			€</h5>
+		<h6 class="card-subtitle text-muted">Année:
+			{{_occasion.annee}}</h6>
+		<h6 class="card-subtitle text-muted">Kilométrage:
+			{{_occasion.Kilometrage | number_format(0, ',', ' ')}}
+			- km
+		</h6>
+	</div>
+	<div id="carouselExampleIndicators" class="carousel slide">
+		<div class="carousel-inner">
+			{% for image in _occasion.images %}
+				<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="">
+					<div class="carousel-item {% if loop.first %}active{% endif %}">
+						<img src="{{ vich_uploader_asset(image, 'imageFile') }}" id="{{ _occasion.modele }}" class="d-block w-100" alt="{{ _occasion.modele }}">
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">Categorie de véhicule : {{_occasion.categorie}}</li>
+		<li class="list-group-item">Marque : {{_occasion.marque}}</li>
+		<li class="list-group-item">Modele : {{_occasion.modele}}</li>
+		<li class="list-group-item">Type de véhicule : {{_occasion.type}}</li>
+		<li class="list-group-item">Carburant : {{_occasion.carburant}}</li>
+	</ul>
+	<div class="card-body">
+		<h5>Descrition</h5>
+		<p class="card-text">{{_occasion.description|slice(0,60)}}...</p>
+	</div>
+	<div class="card-body">
+		<h5>Options</h5>
+		<p class="card-text">{{_occasion.options|slice(0,60)}}...</p>
+	</div>
+  <div class="card-body">
+		<a href="{{ path('app_exemplaire_show',{'id':_occasion.id}) }}" class="card-link">Plus d'info</a>
+	</div>
+  <div class="card-footer text-muted">
+    Ajoutée par:
+    {% for employe in _occasion.employe %}
+        <p class="card-text">{{ employe.prenom }}</p>
+    {% endfor %}
+  </div>
+	<div class="card-footer text-muted">Date d'ajout: {{_occasion.DateAjout|date('d-m-Y H:i:s') }}</div>
+</div>
