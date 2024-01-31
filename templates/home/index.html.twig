@@ -14,8 +14,8 @@
 						<img class="img-fluid rounded" src="{{ vich_uploader_asset(_service, 'imageFile') }}" alt="Réparation">
 						<div class="card-body">
 							<h2 class="card-title">{{ _service.titre }}</h2>
-							<p class="card-text mt-3">{{ _service.description1 }}</p>
-							<p class="card-text">{{ _service.description2 }}</p>
+							<p class="card-text mt-3">{{ _service.description1|raw|nl2br }}</p>
+							<p class="card-text">{{ _service.description2|raw|nl2br }}</p>
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item list-group-item-primary">Liste services:</li>
 								<li class="list-group-item list-group-item-info">{{ _service.listeitem1 }}</li>
@@ -24,7 +24,7 @@
 								<li class="list-group-item list-group-item-info">{{ _service.listeitem4 }}</li>
 								<li class="list-group-item list-group-item-info">{{ _service.listeitem5 }}</li>
 							</ul>
-							<p class="card-text mt-3">{{ _service.description3 }}</p>
+							<p class="card-text mt-3">{{ _service.description3|raw|nl2br }}</p>
 						</div>
 						<div class="card-footer">
 							<small class="text-muted"></small>

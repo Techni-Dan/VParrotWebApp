@@ -112,9 +112,15 @@ If node.js is not installed on your work environment, you will find information 
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-In the file [.env](.env) we must define the information concerning the access to the database. 'mysql' -> for the type of database, 'root' -> for the user, without password in local network, '127.0.0.1:3306' -> the IP address and the port number, 'VParrotWebAppDB' -> the database name, '10.4.28-MariaDB' -> server version and type, 'utf8mb4' -> for character encoding type.
+In the [.env](.env) file  we must define the information concerning the access to the database. DBHOST="127.0.0.1" -> the IP address, DBPORT="3306" -> the port number, DBNAME="VParrotWebAppDB"' -> the database name, DATABASE_PASSWORD="" -> without password in local network, MYSQL_DB_USER="root" -> for the user.
 
-     DATABASE_URL="mysql://root:@127.0.0.1:3306/VParrotWebAppDB?serverVersion=10.4.28-MariaDB&charset=utf8mb4"
+```bash
+DBHOST="127.0.0.1"
+DBPORT="3306"
+DBNAME="VParrotWebAppDB"
+DATABASE_PASSWORD=""
+MYSQL_DB_USER="root"
+```
 
 You must start the Apache Web Server and MySQL Database servers in the XAMPP application in the Manage Servers section
 

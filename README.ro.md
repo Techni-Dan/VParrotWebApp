@@ -113,9 +113,15 @@ Dacă node.js nu este instalat în mediul dvs. de lucru, veți găsi informații
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-În fișierul [.env](.env) trebuie să definim informațiile privind accesul la baza de date. 'mysql' -> pentru tipul bazei de date, 'root' -> pentru utilizator, fără o parolă în local, "127.0.0.1:3306" -> adresa IP și numărul portului, „VParrotWebAppDB” -> numele bazei de date, „10.4.28-MariaDB” -> versiunea și tipul serverului, „utf8mb4” -> pentru tipul de codificare a caracterelor.
+În fișierul [.env](.env) trebuie să definim informațiile privind accesul la baza de date.  DBHOST="127.0.0.1" -> adresa IP locală, DBPORT="3306" -> numărul portului, DBNAME="VParrotWebAppDB" -> numele bazei de date, DATABASE_PASSWORD="" -> fără o parolă în local, MYSQL_DB_USER="root" -> pentru utilizator.
 
-     DATABASE_URL="mysql://root:@127.0.0.1:3306/VParrotWebAppDBt?serverVersion=10.4.28-MariaDB&charset=utf8mb4"
+```bash
+DBHOST="127.0.0.1"
+DBPORT="3306"
+DBNAME="VParrotWebAppDB"
+DATABASE_PASSWORD=""
+MYSQL_DB_USER="root"
+```
 
 Trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers
 
