@@ -211,3 +211,80 @@ Pentru a opri serverul de dezvoltare, utilizați comanda Control+C pentru MacOS 
 **Notă:**
 
 > Aceasta este o aplicație web în modul de dezvoltare și nu o aplicație web în modul producție.
+
+## Fixtures
+
+Fixture-urile în cadrul acestui proiect Symfony reprezintă date de test predefinite utilizate pentru popularea bazei de date cu informații fictive, simulând astfel funcționarea aplicației într-un mediu de dezvoltare. Acestea sunt deosebit de utile pentru evaluarea bunei funcționări a aplicației, testarea diferitelor funcționalități și asigurarea consistenței datelor. Fișierele de fixture se găsesc în directorul /src/DataFixtures/.
+
+Fișierul [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) este responsabil de crearea a 1000 de înregistrări de vehicule, fiecare generată cu date aleatorii folosind biblioteca Faker. Aceste date includ detalii precum preț, anul înregistrării, kilometraj, descriere, opțiuni și altele. Vehiculele sunt asociate aleatoriu cu mărci, modele, categorii, carburanți, tipuri și angajați, oferind astfel o varietate de date realiste.
+
+Fișierul [MarqueFixtures.php](/src/DataFixtures/MarqueFixtures.php) creează instanțe ale clasei Marque cu nume de mărci predefinite, salvând fiecare instanță în baza de date. De asemenea, înregistrează o referință pentru fiecare marcă, permițând recuperarea acestora în alte fixture-uri.
+
+Fișierul [ModeleFixtures.php](/src/DataFixtures/ModeleFixtures.php) este responsabil de crearea de instanțe ale clasei Modele, asociate cu mărci specifice. Folosește referințele create de MarqueFixtures.php pentru a stabili relațiile dintre mărci și modele.
+
+Fișierul [CategorieFixtures.php](/src/DataFixtures/CategorieFixtures.php) creează instanțe ale clasei Categorie, care reprezintă categoriile de vehicule, cum ar fi Mașină, Motocicletă, Camion și Utilitar. Fiecare categorie este persistată în baza de date cu o referință unică, facilitând astfel utilizarea acestor categorii în alte fixture-uri.
+
+Fișierul [CarburantFixtures.php](/src/DataFixtures/CarburantFixtures.php) creează instanțe ale clasei Carburant, reprezentând diferite tipuri de combustibili precum Motorină, Benzină, Hibrid etc. Aceste instanțe sunt, de asemenea, salvate în baza de date.
+
+Fișierul [TypeFixtures.php](/src/DataFixtures/TypeFixtures.php) Generează date pentru clasa Type, care reprezintă tipurile de vehicule precum 4x4, Sedan, Break etc. Tipurile sunt adăugate în baza de date cu referințe unice pentru un acces ușor în alte fixture-uri.
+
+Fișierul [ServiceFixtures.php](/src/DataFixtures/ServiceFixtures.php) creează intrări de servicii pentru garaj, detaliind diferite tipuri de reparații și întrețineri oferite. Fiecare serviciu este însoțit de o descriere detaliată, o listă de elemente specifice și o imagine ilustrativă. Aceste servicii reflectă competențele și expertiza garajului în repararea caroseriei, mecanică, precum și în întreținerea regulată a vehiculelor.
+
+Fișierul [EmployesFixtures.php](/src/DataFixtures/EmployesFixtures.php) generează 10 conturi de angajați, fiecare asociat cu un nume, prenume, adresă de e-mail, parolă și atribuit rolului 'ROLE_EMPLOYE'. Aceste conturi fictive simulând prezența angajaților în aplicație și testând funcționalitățile legate de gestionarea personalului.
+
+Fișierul [HoraireFixtures.php](/src/DataFixtures/HoraireFixtures.php) creează orare fictive de deschidere pentru garaj, detaliind orele de deschidere și închidere pentru fiecare zi a săptămânii. Aceste orare oferă o reprezentare simulată a perioadelor în care garajul este deschis publicului, permitând astfel testarea funcționalităților legate de planificarea vizitelor.
+
+Fișierul [TemoignageFixtures.php](/src/DataFixtures/TemoignageFixtures.php) este o clasă de fixture-uri utilizată pentru a popula baza de date cu date de marturii fictive atunci când este încărcată. Acest fișier de fixture-uri generează în mod aleatoriu mărturii cu nume, comentarii și note fictive, persistându-le în baza de date. Acest lucru poate fi util pentru a avea date realiste despre mărturii în timpul dezvoltării sau testelor.
+
+Fiecare dintre aceste fișiere este folosit pentru a crea seturi specifice de date în baza de date, iar acestea sunt interconectate prin referințele create. Când este executată comanda:
+
+```bash
+php bin/console doctrine:fixtures:load
+```
+aceste fixture-uri sunt încărcate în baza de date, creând astfel un set consecvent de date pentru dezvoltare și teste.
+
+În ansamblu, aceste fixture-uri contribuie la eficientizarea dezvoltării aplicației, furnizând date consistente și diversificate pentru diferitele entități ale aplicației, facilitând astfel testarea și validarea funcționalităților.
+
+Notă:
+
+Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate în baza de date cu ajutorul fixture-urilor: Faceți [clic aici](https://vparrotwebapptest.technidan.com).
+
+## SQL
+
+## API
+
+O API, sau Interfață de Programare a Aplicațiilor, este un set de reguli și protocoale care permit comunicarea între două aplicații software distincte. Aceasta definește metodele și formatele de date pe care aplicațiile le pot utiliza pentru a solicita și a schimba informații. O API acționează ca un punte, permițând diferitelor aplicații să lucreze împreună în mod coeziv.
+
+Controlerul [VehiculesController.php](/src/Controller/Api/VehiculesController.php) expune trei rute pentru interacțiunea cu datele vehiculelor.
+
+### GET /api/vehicules - Listă cu toate vehiculele:
+Această rută returnează lista completă a tuturor vehiculelor disponibile.
+
+- **Metodă** : GET
+- **Parametri** : Niciunul
+- **Răspuns** : Un șir JSON care conține informații despre vehicule.
+- **Exemplu de utilizare** : GET /api/vehicules
+
+### GET /api/vehiculesby - Listă de vehicule cu paginare:
+Această rută recuperează o listă paginată a vehiculelor, cu opțiuni de paginare.
+
+- **Metodă** : GET
+- **Parametri** : page - Numărul paginii de recuperat (implicit este 1).
+- **Răspuns** : Un șir JSON care conține informații despre vehicule, pagina curentă, numărul de elemente pe pagină și numărul total de elemente.
+Exemplu de utilizare: GET /api/vehiculesby?page=2
+
+### GET /api/vehicules/{id} - Detalii despre un vehicul specific:
+Această rută recuperează detaliile unui vehicul specific utilizând identificatorul său.
+
+- **Metodă** : GET
+- **Parametri** : id - Identificatorul vehiculului.
+- **Răspuns** : Un obiect JSON care conține detaliile vehiculului solicitat.
+- **Exemplu de utilizare** : GET /api/vehicules/2
+
+Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializate folosind grupul de serializare "getVehicules". Informațiile paginate sunt, de asemenea, incluse în răspuns pentru ruta care suportă paginarea (GET /api/vehiculesby). Aceste rute furnizează o API simplă, dar puternică, pentru a obține informații despre vehiculele proiectului.
+
+
+
+
+
+

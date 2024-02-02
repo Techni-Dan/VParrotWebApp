@@ -146,7 +146,7 @@ class MarqueFixtures extends Fixture
       $this->addReference('mar-' . $this->counter, $marque);
 
        // Add debugging statement
-       var_dump("Marque Reference: mar-" . $this->counter);
+       //var_dump("Marque Reference: mar-" . $this->counter);
 
       $this->counter++;
     }

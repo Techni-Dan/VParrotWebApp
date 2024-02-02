@@ -94,7 +94,7 @@ class OccasionsController extends AbstractController
     public function exemplaireShow(int $id, VehiculeRepository $vehiculeRepository, MailerInterface $mailer, Request $request): Response
     {
         $vehiculeId = $vehiculeRepository->find($id);
-        $emailSubject = $vehiculeId->getModele();
+        $emailSubject = $vehiculeId->getTitre();
 
         $form = $this->createForm(ContactType::class);
 

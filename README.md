@@ -214,3 +214,76 @@ Pour arrêter le serveur de développement, utilisez la commande Control+C pour 
 **Note:**
 
 > Il s'agit d'une application web en mode développement et non pas d'une application web en mode production.
+
+## Fixtures
+
+Les fixtures dans le cadre de ce projet Symfony sont des données de test prédéfinies qui sont utilisées pour remplir la base de données avec des informations fictives, simulant ainsi le fonctionnement de l'application dans un environnement de développement. Elles sont particulièrement utiles pour évaluer le bon fonctionnement de l'application, tester différentes fonctionnalités, et assurer la cohérence des données. Les fichiers des fixtures se trouvent dans le dossier [/src/DataFixtures/](/src/DataFixtures/).
+
+Le fichier [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) est responsable de la création de 1000 entrées de véhicules, chacune étant générée avec des données aléatoires à l'aide de la bibliothèque Faker. Ces données incluent des détails tels que le prix, l'année de mise en circulation, le kilométrage, la description, les options, et plus encore. Les véhicules sont associés à des marques, modèles, catégories, carburants, types, et employés de manière aléatoire, offrant ainsi une diversité de données réalistes.
+
+Le fichier [MarqueFixtures.php](/src/DataFixtures/MarqueFixtures.php) crée des instances de la classe Marque avec des noms de marques prédéfinis, enregistrant chaque instance dans la base de données. Il enregistre également une référence pour chaque marque, ce qui permet de les récupérer dans d'autres fixtures.
+
+Le fichier [ModeleFixtures.php](/src/DataFixtures/ModeleFixtures.php) est responsable de la création d'instances de la classe Modele, associées à des marques spécifiques. Il utilise les références créées par MarqueFixtures.php pour établir les relations entre les marques et les modèles.
+
+Le fichier [CategorieFixtures.php](/src/DataFixtures/CategorieFixtures.php) crée des instances de la classe Categorie, qui représente les catégories de véhicules, telles que Voiture, Moto, Camion et Utilitaire. Chaque catégorie est persistée dans la base de données avec une référence unique, facilitant ainsi l'utilisation de ces catégories dans d'autres fixtures.
+
+Le fichier [CarburantFixtures.php](/src/DataFixtures/CarburantFixtures.php) crée des instances de la classe Carburant, représentant différents types de carburants tels que Diesel, Essence, Hybride, etc. Ces instances sont également enregistrées dans la base de données.
+
+Le fichier [TypeFixtures.php](/src/DataFixtures/TypeFixtures.php) Ce fichier génère des données pour la classe Type, qui représente les types de véhicules tels que 4x4, Berline, Break, etc. Les types sont ajoutés à la base de données avec des références uniques pour un accès facile dans d'autres fixtures.
+
+Le fichier [ServiceFixtures.php](/src/DataFixtures/ServiceFixtures.php) crée des entrées de services pour le garage, détaillant les différents types de réparations et d'entretiens proposés. Chaque service est accompagné d'une description détaillée, d'une liste d'éléments spécifiques, et d'une image illustrative. Ces services reflètent les compétences et l'expertise du garage dans la réparation de la carrosserie, la mécanique, ainsi que dans l'entretien régulier des véhicules.
+
+Le fichier [EmployesFixtures.php](/src/DataFixtures/EmployesFixtures.php) génère 10 comptes d'employés, chacun associé à un nom, prénom, adresse e-mail, mot de passe, et attribué au rôle 'ROLE_EMPLOYE'. Ces comptes fictifs permettent de simuler la présence d'employés dans l'application et de tester les fonctionnalités liées à la gestion du personnel.
+
+Le fichier [HoraireFixtures.php](/src/DataFixtures/HoraireFixtures.php) crée des horaires d'ouverture fictifs pour le garage, détaillant les heures d'ouverture et de fermeture pour chaque jour de la semaine. Ces horaires offrent une représentation simulée des périodes pendant lesquelles le garage est ouvert au public, permettant ainsi de tester les fonctionnalités liées à la planification des visites.
+
+Le fichier [TemoignageFixtures.php](/src/DataFixtures/TemoignageFixtures.php) est une classe de fixtures utilisée pour peupler la base de données avec des données de témoignages fictifs lorsqu'elle est chargée. Ce fichier de fixtures génère de manière aléatoire des témoignages avec des noms, des commentaires et des notes fictifs, et les persiste dans la base de données. Cela peut être utile pour avoir des données de témoignages réalistes lors du développement ou des tests.
+
+Chacun de ces fichiers sert à créer des jeux de données spécifiques dans la base de données, et ils sont interconnectés grâce aux références créées. Lorsque la commande:
+
+```bash
+php bin/console doctrine:fixtures:load
+```
+
+est exécutée, ces fixtures sont chargées dans la base de données, créant ainsi un ensemble cohérent de données pour le développement et les tests.
+
+Dans l'ensemble, ces fixtures contribuent à rendre le développement de l'application plus efficace en fournissant des données cohérentes et diversifiées pour les différentes entités de l'application, facilitant ainsi les tests et la validation des fonctionnalités.
+
+**Note:**
+
+> Lien vers la version en ligne du projet avec 1 000 vehicules enregistrées dans la base de données a l'aide de fixtures: [Cliquez ici](https://vparrotwebapptest.technidan.com)
+
+## SQL
+
+## API
+
+Une API, ou Interface de Programmation Applicative (en anglais, Application Programming Interface), est un ensemble de règles et de protocoles qui permettent à deux logiciels distincts de communiquer entre eux. Elle définit les méthodes et les formats de données que les applications peuvent utiliser pour demander et échanger des informations. Une API agit comme un pont qui permet à différentes applications de travailler ensemble de manière cohérente.
+
+Le contrôleur [VehiculesController.php](/src/Controller/Api/VehiculesController.php) expose trois routes pour interagir avec les données des véhicules.
+
+### GET /api/vehicules - Liste de tous les véhicules :
+
+Cette route renvoie la liste complète de tous les véhicules disponibles.
+- **Méthode** : GET
+- **Paramètres** : Aucun
+- **Réponse** : Un tableau JSON contenant les informations des véhicules.
+- **Exemple d'utilisation** : GET /api/vehicules
+
+### GET /api/vehiculesby - Liste des véhicules avec pagination :
+
+Cette route permet de récupérer une liste paginée des véhicules, avec des options de pagination.
+- **Méthode** : GET
+- **Paramètres** : page - Numéro de la page à récupérer (par défaut 1).
+- **Réponse** : Un tableau JSON contenant les informations des véhicules, la page actuelle, le nombre d'éléments par page et le nombre total d'éléments.
+- **Exemple d'utilisation** : GET /api/vehiculesby?page=2
+
+
+### GET /api/vehicules/{id} - Détails d'un véhicule spécifique :
+
+Cette route permet de récupérer les détails d'un véhicule spécifique en utilisant son identifiant.
+- **Méthode** : GET
+- **Paramètres** : id - Identifiant du véhicule.
+- **Réponse** : Un objet JSON contenant les détails du véhicule demandé.
+- **Exemple d'utilisation** : GET /api/vehicules/2
+
+Chaque route utilise le format JSON pour la réponse, et les données sont sérialisées en utilisant le groupe de sérialisation "getVehicules". Les informations paginées sont également incluses dans la réponse pour la route qui prend en charge la pagination (GET /api/vehiculesby). Ces routes offrent une API simple mais puissante pour récupérer des informations sur les véhicules du projet.

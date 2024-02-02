@@ -35,19 +35,19 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
       $vehicule->setMarque($marque);
 
       // Add debugging statement
-      var_dump("Marque ID & Marque : " . $marque->getId() . " " . $marque);
+      //var_dump("Marque ID & Marque : " . $marque->getId() . " " . $marque);
 
       // Get a random modele reference from the marque
       $modeleReference = $this->getRandomModeleReferenceForMarque($marque, $manager);
 
 
-      var_dump("Modele Reference: " . $modeleReference);
+      //var_dump("Modele Reference: " . $modeleReference);
 
       // Get the Modele entity using the reference
       $modele = $this->getReference($modeleReference);
 
       // Add another debugging statement
-      var_dump("Modele ID: " . $modele->getId());
+      //var_dump("Modele ID: " . $modele->getId());
 
       // Set the modele for the vehicule
       $vehicule->setModele($modele);
@@ -95,7 +95,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
     }
 
     $randomModeleReference = $matchingModeleReferences[array_rand($matchingModeleReferences)];
-    var_dump("Random reference : " . $randomModeleReference);
+    //var_dump("Random reference : " . $randomModeleReference);
     return $this->getReference($randomModeleReference);
   }
   /*
@@ -140,7 +140,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
   private function getRandomModeleReferenceForMarque($marque, $manager)
 {
     $marqueId = 1;
-    var_dump("Marque ID: " . $marqueId);
+    //var_dump("Marque ID: " . $marqueId);
     //$matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-1");
     $matchingModeleReferences = ["mod-1820-5", "mod-125-8"];
     if (empty($matchingModeleReferences)) {
@@ -159,7 +159,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
 
     foreach ($referenceRepository->findAll() as $reference) {
       $key = $this->getReferenceKey($reference);
-      var_dump($key);
+      //var_dump($key);
       if (strpos($key, $prefix) === 0) {
         $references[] = $key;
       }

@@ -15,12 +15,12 @@ class VehiculeImageFixtures extends Fixture implements DependentFixtureInterface
     private $counter = 1;
     public function load(ObjectManager $manager): void
     {
-        $faker = Factory::create('fr_FR');
+        //$faker = Factory::create('fr_FR');
 
         for ($i = 0; $i < 1000; $i++) {
             $vehiculeImage = new VehiculeImage();
-            $vehiculeImage->setImageName('chiron3-6571826b112d9397779940.jpeg');
-            $vehiculeImage->setImageSize('44753');
+            $vehiculeImage->setImageName('chiron-65b5ff2b8d2ff938772840.jpeg');
+            $vehiculeImage->setImageSize('67496');
             $vehiculeImage->setUpdatedAt(new \DateTimeImmutable()); 
             
             $vehicule = $this->getReference('veh-' . $this->counter);

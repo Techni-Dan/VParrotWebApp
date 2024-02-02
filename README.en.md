@@ -210,3 +210,74 @@ To stop the development server, use the command Control+C for MacOS or CTRL+C fo
 **Note:**
 
 > This is a web application in development mode and not a web application in production mode.
+
+## Fixtures
+
+Fixtures in the context of this Symfony project are predefined test data used to populate the database with fictitious information, simulating the application's operation in a development environment. They are particularly useful for assessing the application's proper functioning, testing various features, and ensuring data consistency. The fixture files are located in the [/src/DataFixtures/](/src/DataFixtures) directory.
+
+The [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) file is responsible for creating 1000 vehicle entries, each generated with random data using the Faker library. This data includes details such as price, year of registration, mileage, description, options, and more. Vehicles are randomly associated with brands, models, categories, fuels, types, and employees, providing a variety of realistic data.
+
+The [MarqueFixtures.php](/src/DataFixtures/MarqueFixtures.php) file creates instances of the Marque class with predefined brand names, saving each instance in the database. It also registers a reference for each brand, allowing them to be retrieved in other fixtures.
+
+The [ModeleFixtures.php](/src/DataFixtures/ModeleFixtures.php) file is responsible for creating instances of the Modele class, associated with specific brands. It uses the references created by MarqueFixtures.php to establish relationships between brands and models.
+
+The [CategorieFixtures.php](/src/DataFixtures/CategorieFixtures.php) file creates instances of the Categorie class, representing vehicle categories such as Car, Motorcycle, Truck, and Utility. Each category is persisted in the database with a unique reference, facilitating their use in other fixtures.
+
+The [CarburantFixtures.php](/src/DataFixtures/CarburantFixtures.php) file creates instances of the Carburant class, representing different types of fuels such as Diesel, Petrol, Hybrid, etc. These instances are also saved in the database.
+
+The [TypeFixtures.php](/src/DataFixtures/TypeFixtures.php) file generates data for the Type class, representing vehicle types such as 4x4, Sedan, Estate, etc. The types are added to the database with unique references for easy access in other fixtures.
+
+The [ServiceFixtures.php](/src/DataFixtures/ServiceFixtures.php) file creates entries for garage services, detailing different types of repairs and maintenance offered. Each service comes with a detailed description, a list of specific items, and an illustrative image. These services reflect the garage's skills and expertise in body repair, mechanics, as well as regular vehicle maintenance.
+
+The [EmployesFixtures.php](/src/DataFixtures/EmployesFixtures.php) file generates 10 employee accounts, each associated with a name, first name, email address, password, and assigned to the 'ROLE_EMPLOYEE' role. These fictional accounts simulate the presence of employees in the application and test features related to personnel management.
+
+The [HoraireFixtures.php](/src/DataFixtures/HoraireFixtures.php) file creates fictional opening hours for the garage, detailing opening and closing hours for each day of the week. These schedules provide a simulated representation of the periods during which the garage is open to the public, allowing testing of features related to visit scheduling.
+
+The [TemoignageFixtures.php](/src/DataFixtures/TemoignageFixtures.php) file is a fixtures class used to populate the database with fictional testimonial data when loaded. This fixtures file randomly generates testimonials with fictional names, comments, and ratings, and persists them in the database. This can be useful for having realistic testimonial data during development or testing.
+
+Each of these files is used to create specific datasets in the database, and they are interconnected through created references. When the command:
+
+```bash
+php bin/console doctrine:fixtures:load
+```
+is executed, these fixtures are loaded into the database, creating a consistent set of data for development and testing.
+
+Overall, these fixtures contribute to making the application development more efficient by providing consistent and diversified data for different entities of the application, facilitating testing and feature validation.
+
+Note:
+
+Link to the online version of the project with 1 000 vehicles recorded in the database using fixtures: [Click here](https://vparrotwebapptest.technidan.com).
+
+## SQL
+
+## API
+
+An API, or Application Programming Interface, is a set of rules and protocols that enable communication between two distinct software applications. It defines the methods and data formats that applications can use to request and exchange information. An API acts as a bridge, allowing different applications to work together cohesively.
+
+The [VehiculesController.php](/src/Controller/Api/VehiculesController.php) controller exposes three routes for interacting with vehicle data.
+
+### GET /api/vehicules - List of all vehicles:
+This route returns the complete list of all available vehicles.
+
+- **Method** : GET
+- **Parameters** : None
+- **Response** : A JSON array containing vehicle information.
+- **Usage Example** : GET /api/vehicules
+  
+### GET /api/vehiculesby - List of vehicles with pagination:
+This route retrieves a paginated list of vehicles, with pagination options.
+
+- **Method** : GET
+- **Parameters** : page - Page number to retrieve (default is 1).
+- **Response** : A JSON array containing vehicle information, the current page, the number of items per page, and the total item count.
+- **Usage Example** : GET /api/vehiculesby?page=2
+
+### GET /api/vehicules/{id} - Details of a specific vehicle:
+This route retrieves the details of a specific vehicle using its identifier.
+
+- **Method** : GET
+- **Parameters** : id - Vehicle identifier.
+- **Response** : A JSON object containing the details of the requested vehicle.
+- **Usage Example** : GET /api/vehicules/2
+
+Each route uses the JSON format for the response, and the data is serialized using the "getVehicules" serialization group. Paginated information is also included in the response for the route that supports pagination (GET /api/vehiculesby). These routes provide a simple yet powerful API for retrieving information about the project's vehicles.

@@ -3,7 +3,7 @@
 {% endblock %}
 {% block body %}
 	<div class="container w-75">
-		<h1>Contactez notre équipe</h1>
+		<h1 class="mt-5 mb-5">Contactez notre équipe</h1>
 		<p>Pour toute demande d'information, vous pouvez nous contacter par téléphone au:<a class="ms-2" href="tel://+33123456789">01 23 45 67 89</a><br>ou en remplissant le formulaire ci-dessous.</p>
 		<form method="post" action="{{ path('app_contact') }}">
 			{% include '_partials/_formContact.html.twig'  with {contact_form: contact_form, success: success} only  %}

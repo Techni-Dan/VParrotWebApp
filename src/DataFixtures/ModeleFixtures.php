@@ -142,7 +142,7 @@ class ModeleFixtures extends Fixture implements DependentFixtureInterface
 
       $marque = $this->getReference('mar-' . $this->i);
       $marqueId = $this->i;
-      var_dump("Marque ID : ".$marqueId); 
+      //var_dump("Marque ID : ".$marqueId); 
       $this->i++;
 
       foreach ($modeleNoms as $modeleNom) {
@@ -155,7 +155,7 @@ class ModeleFixtures extends Fixture implements DependentFixtureInterface
         $this->addReference("mod-$this->j-" . $this->counter, $modele);
 
         // Add debugging statement
-        var_dump("Modele Reference: mod-".$this->j."-" . $this->counter);
+        //var_dump("Modele Reference: mod-".$this->j."-" . $this->counter);
 
         $this->j++;
         $this->counter++;
