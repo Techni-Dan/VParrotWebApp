@@ -51,7 +51,7 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 - système d'exploitation: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
 
-- IDE: [Visual Studio Code 1.85.2](https://code.visualstudio.com/)
+- IDE: [Visual Studio Code 1.86.0](https://code.visualstudio.com/)
 
 - IDE: [PhpStorm 2023.3.2](https://www.jetbrains.com/phpstorm/download)
 
@@ -63,7 +63,7 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 - gestion des dépendances en PHP: [Composer version 2.6.5](https://getcomposer.org/download/)
 
-- outil de développement pour créer, exécuter et gérer vos applications Symfony: [Symfony CLI version 5.8.4](https://symfony.com/download)
+- outil de développement pour créer, exécuter et gérer vos applications Symfony: [Symfony CLI version 5.8.6](https://symfony.com/download)
 
 - moteur d'exécution JavaScript: [Node.js 20.11.0](https://nodejs.org/en/download)
 
@@ -287,3 +287,13 @@ Cette route permet de récupérer les détails d'un véhicule spécifique en uti
 - **Exemple d'utilisation** : GET /api/vehicules/2
 
 Chaque route utilise le format JSON pour la réponse, et les données sont sérialisées en utilisant le groupe de sérialisation "getVehicules". Les informations paginées sont également incluses dans la réponse pour la route qui prend en charge la pagination (GET /api/vehiculesby). Ces routes offrent une API simple mais puissante pour récupérer des informations sur les véhicules du projet.
+
+## Diagrammes
+
+[Diagramme de classes](/resources/Class_diagram.jpg)
+
+[Diagramme de cas d'utilisations](/resources/Diagramme%20de%20cas%20d'utilisation.jpg)
+
+[Diagramme de séqence 1](/resources/Diagramme%20de%20séquence.jpg)
+
+[Diagramme de séqence 2](/resources/Diagramme%20de%20sequence_2.jpg)

@@ -48,7 +48,7 @@ Informațiile de contact, inclusiv formularul, sunt, de asemenea, vizibile în p
 
 - sistem de operare: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
 
-- IDE: [Visual Studio Code 1.85.2](https://code.visualstudio.com/)
+- IDE: [Visual Studio Code 1.86.0](https://code.visualstudio.com/)
 
 - IDE: [PhpStorm 2023.3.2](https://www.jetbrains.com/phpstorm/download)
 
@@ -60,7 +60,7 @@ Informațiile de contact, inclusiv formularul, sunt, de asemenea, vizibile în p
 
 - gestionarea dependențelor în PHP: [Composer versiunea 2.6.5](https://getcomposer.org/download/)
 
-- instrument de dezvoltare pentru a construi, rula și gestiona aplicațiile Symfony: [Symfony CLI versiunea 5.8.4](https://symfony.com/download)
+- instrument de dezvoltare pentru a construi, rula și gestiona aplicațiile Symfony: [Symfony CLI versiunea 5.8.6](https://symfony.com/download)
 
 - mediu de execuție JavaScript: [Node.js 20.11.0](https://nodejs.org/en/download)
 
@@ -283,7 +283,15 @@ Această rută recuperează detaliile unui vehicul specific utilizând identific
 
 Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializate folosind grupul de serializare "getVehicules". Informațiile paginate sunt, de asemenea, incluse în răspuns pentru ruta care suportă paginarea (GET /api/vehiculesby). Aceste rute furnizează o API simplă, dar puternică, pentru a obține informații despre vehiculele proiectului.
 
+## Diagrammes
 
+[Diagrame de clase](/resources/Class_diagram.jpg)
+
+[Diagrame caz de utilizare](/resources/Diagramme%20de%20cas%20d'utilisation.jpg)
+
+[Diagrame de secvență 1](/resources/Diagramme%20de%20séquence.jpg)
+
+[Diagrame de secvență 2](/resources/Diagramme%20de%20sequence_2.jpg)
 
 
 

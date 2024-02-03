@@ -48,7 +48,7 @@ Contact information, including the form, is also visible at the bottom of each u
 
 - operating system: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
 
-- IDE: [Visual Studio Code 1.85.2](https://code.visualstudio.com/)
+- IDE: [Visual Studio Code 1.86.0](https://code.visualstudio.com/)
 
 - IDE: [PhpStorm 2023.3.2](https://www.jetbrains.com/phpstorm/download)
 
@@ -60,7 +60,7 @@ Contact information, including the form, is also visible at the bottom of each u
 
 - dependency management in PHP: [Composer version 2.6.5](https://getcomposer.org/download/)
 
-- developer tool to build, run, and manage your Symfony applications: [Symfony CLI version 5.8.4](https://symfony.com/download)
+- developer tool to build, run, and manage your Symfony applications: [Symfony CLI version 5.8.6(https://symfony.com/download)
 
 - JavaScript runtime: [Node.js 20.11.0](https://nodejs.org/en/download)
 
@@ -281,3 +281,13 @@ This route retrieves the details of a specific vehicle using its identifier.
 - **Usage Example** : GET /api/vehicules/2
 
 Each route uses the JSON format for the response, and the data is serialized using the "getVehicules" serialization group. Paginated information is also included in the response for the route that supports pagination (GET /api/vehiculesby). These routes provide a simple yet powerful API for retrieving information about the project's vehicles.
+
+## Diagrams
+
+[Class diagram](/resources/Class_diagram.jpg)
+
+[Use case diagram](/resources/Diagramme%20de%20cas%20d'utilisation.jpg)
+
+[Sequence diagram 1](/resources/Diagramme%20de%20séquence.jpg)
+
+[Sequence diagram 2](/resources/Diagramme%20de%20sequence_2.jpg)
