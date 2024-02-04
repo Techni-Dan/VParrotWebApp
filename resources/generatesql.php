@@ -119,32 +119,29 @@ $modelsByMarque = [
             'Xev' => ['Kitty', 'Yoyo'],
             'Yugo' => ['102', 'Florida', 'Koral'],
             'Zaporożec' => ['965', '968'],
-            'Zastawa' => ['1100', '750'],
-            '' => ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-            '' => ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-            '' => ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+            'Zastawa' => ['1100', '750']
         ];
 
-        $manufacturers = array_keys($modelsByMarque);
-        // Output the list of manufacturers
-        echo "INSERT INTO `marque` (`id`, `nom`) VALUES ";
-        foreach ($manufacturers as $manufacturer) {
-          echo "(NULL, '$manufacturer'), " ;
-        }
-        
-        echo "\n\n";
-        echo "INSERT INTO `modele` (`id`, `marque_id`, `nom`) VALUES ";
-        $i = 1;
-        $j = 0;
-        foreach ($modelsByMarque as $manufacturer => $models) {
-          //echo "$manufacturer\n";
-          // Loop through each model for the current manufacturer
-          foreach ($models as $model) {
-            echo "(NULL, '$i', '$model'), ";
-            $j++;
-          }
-          $i++;
-        }
-        $i=$i-1;
-        echo "\n\nNombre des marquess: $i";
-        echo "\n\nNombre des modeles: $j";
+$manufacturers = array_keys($modelsByMarque);
+// Output the list of manufacturers
+echo "INSERT INTO `marque` (`id`, `nom`) VALUES ";
+foreach ($manufacturers as $manufacturer) {
+  echo "(NULL, '$manufacturer'), " ;
+}
+
+echo "\n\n";
+echo "INSERT INTO `modele` (`id`, `marque_id`, `nom`) VALUES ";
+$i = 1;
+$j = 0;
+foreach ($modelsByMarque as $manufacturer => $models) {
+  //echo "$manufacturer\n";
+  // Loop through each model for the current manufacturer
+  foreach ($models as $model) {
+    echo "(NULL, '$i', '$model'), ";
+    $j++;
+  }
+  $i++;
+}
+$i=$i-1;
+echo "\n\nNombre des marquess: $i";
+echo "\n\nNombre des modeles: $j";

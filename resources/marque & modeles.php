@@ -6,7 +6,7 @@ $modelsByMarque = [
             'Alfa Romeo' => ['145', '146', '147', '155', '156', '159', '164', '166', '33', '4C', '75', '90', 'Alfasud', 'Alfetta', 'Brera', 'Crosswagon', 'Giulia', 'Giulietta', 'GT', 'GTV', 'Mito', 'Spider', 'Sprint', 'Stelvio', 'Tonale'],
             'Aro' => ['Seria 10', 'Seria 240', 'Seria IMS', 'Spartana'],
             'Aston Martin' => ['AMV8', 'Bulldog', 'Cygnet', 'DB11', 'DB4', 'DB5', 'DB6', 'DB7', 'DB9', 'DBS', 'DBX', 'Legonda', 'One-77', 'Rapide', 'V12 Vantage', 'V8 Vantage', 'Vanquish', 'Virage', 'Volante', 'Zagato'],
-            'Audi' => ['100', '200', '80', '90', 'A1', 'A2', 'A3', 'A4', 'A4 Allroad', 'A5', 'A6', 'A6 Allroad', 'A7', 'A8'],
+            'Audi' => ['100', '200', '80', '90', 'A1', 'A2', 'A3', 'A4', 'A4 Allroad', 'A5', 'A6', 'A6 Allroad', 'A7', 'A8', 'Q2', 'Q3', 'Q4', 'Q5', 'Q7', 'Q8', 'Quattro', 'R8', 'RS Q3', 'RS Q8', 'RS2', 'RS3', 'RS4', 'RS5', 'RS6', 'RS7', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'SQ2', 'SQ5', 'SQ7', 'SQ8', 'TT', 'TT RS', 'TT S', 'V8'],
             'Austin' => ['Allegro', 'Ambasador', 'Maestro', 'Maxi', 'Metro', 'Mini', 'Montego', 'Princess'],
             'Baic' => ['X35', 'X55'],
             'Bentley' => ['Arnage', 'Azure', 'Bentayga', 'Brooklands', 'Continental', 'Eight', 'Flying Spur', 'Mulliner', 'Mulsanne', 'Turbo'],
@@ -108,7 +108,7 @@ $modelsByMarque = [
             'Tavria' => ['ZAZ 1102', 'ZAZ 1103', 'ZAZ 1105'],
             'Tazzari' => ['EM1', 'Zero', 'Zero Evo', 'Zero SE', 'Zero Speedster', 'Zero City', 'Zerro EM2 Space', 'Zerro Junior'],
             'Tesla' => ['Cybertruck', 'Model 3', 'Model S', 'Model X', 'Model Y', 'Roadster'],
-            'Toyota' => ['4Runner', 'Alphard', 'Auris', 'Avalon', 'Avensis', 'Aygo', 'BZ4X', 'C-HR', 'Camry', 'Carina', 'Celica', 'Corolla', 'Corolla Cross', 'Corolla Verso', 'Cressida', 'Crown', 'FJ', 'Fortuner', 'GT86', 'Harrier', 'Hiace', 'Highlander', 'Hilux', 'iQ', 'Land Cruiser', 'Lite-Ace', 'Matrix', 'MR2', 'Paseo', 'Picnic', 'Previa', 'Prius', 'Prius+', 'Proace', 'RAV4', 'Sequoia', 'Sienna', 'Starlet', 'Supra', 'Tacoma', 'Tercel', 'Tundra', 'Urban Cruiser', 'Venza', 'Verso', 'Yaris', 'Yaris Cross', ''],
+            'Toyota' => ['4Runner', 'Alphard', 'Auris', 'Avalon', 'Avensis', 'Aygo', 'BZ4X', 'C-HR', 'Camry', 'Carina', 'Celica', 'Corolla', 'Corolla Cross', 'Corolla Verso', 'Cressida', 'Crown', 'FJ', 'Fortuner', 'GT86', 'Harrier', 'Hiace', 'Highlander', 'Hilux', 'iQ', 'Land Cruiser', 'Lite-Ace', 'Matrix', 'Mirai II', 'MR2', 'Paseo', 'Picnic', 'Previa', 'Prius', 'Prius+', 'Proace', 'RAV4', 'Sequoia', 'Sienna', 'Starlet', 'Supra', 'Tacoma', 'Tercel', 'Tundra', 'Urban Cruiser', 'Venza', 'Verso', 'Yaris', 'Yaris Cross', ''],
             'Trabant' => ['1.1', '601', 'P 50'],
             'Triumph' => ['Acclaim', 'Dolomite', 'Spitfire', 'Stag', 'Toledo', 'TR3', 'TR4', 'TR5', 'TR6', 'TR7', 'TR8'],
             'TVR' => ['Cerbera', 'Chimaera', 'Griffith', 'S', 'Sagaris', 'Tamora', 'Tasmin', 'Tuscan', 'Vixen'],
@@ -124,3 +124,27 @@ $modelsByMarque = [
             '' => ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
             '' => ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
         ];
+
+        $manufacturers = array_keys($modelsByMarque);
+        // Output the list of manufacturers
+        echo "INSERT INTO `marque` (`id`, `nom`) VALUES ";
+        foreach ($manufacturers as $manufacturer) {
+          echo "(NULL, '$manufacturer'), " ;
+        }
+        
+        echo "\n\n";
+        echo "INSERT INTO `modele` (`id`, `marque_id`, `nom`) VALUES ";
+        $i = 1;
+        $j = 0;
+        foreach ($modelsByMarque as $manufacturer => $models) {
+          //echo "$manufacturer\n";
+          // Loop through each model for the current manufacturer
+          foreach ($models as $model) {
+            echo "(NULL, '$i', '$model'), ";
+            $j++;
+          }
+          $i++;
+        }
+        $i=$i-1;
+        echo "\n\nNombre des marquess: $i";
+        echo "\n\nNombre des modeles: $j";
