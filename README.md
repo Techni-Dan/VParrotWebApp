@@ -294,6 +294,6 @@ Chaque route utilise le format JSON pour la réponse, et les données sont séri
 
 [Diagramme de cas d'utilisations](/resources/Diagramme%20de%20cas%20d'utilisation.jpg)
 
-[Diagramme de séqence 1](/resources/Diagramme%20de%20séquence.jpg)
+[Diagramme de séqence 1](/resources/Diagramme_de_sequence.jpg)
 
 [Diagramme de séqence 2](/resources/Diagramme%20de%20sequence_2.jpg)

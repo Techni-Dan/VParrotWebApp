@@ -289,7 +289,7 @@ Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializ
 
 [Diagrame caz de utilizare](/resources/Diagramme%20de%20cas%20d'utilisation.jpg)
 
-[Diagrame de secvență 1](/resources/Diagramme%20de%20séquence.jpg)
+[Diagrame de secvență 1](/resources/Diagramme_de_sequence.jpg)
 
 [Diagrame de secvență 2](/resources/Diagramme%20de%20sequence_2.jpg)
 
