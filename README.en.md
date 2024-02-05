@@ -112,19 +112,19 @@ If node.js is not installed on your work environment, you will find information 
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-In the [.env](.env) file  we must define the information concerning the access to the database. DBHOST="127.0.0.1" -> the IP address, DBPORT="3306" -> the port number, DBNAME="VParrotWebAppDB"' -> the database name, DATABASE_PASSWORD="" -> without password in local network, MYSQL_DB_USER="root" -> for the user.
+In the [.env](.env) file  we must define the information concerning the access to the database. DBHOST="127.0.0.1" -> the IP address, DBPORT="3306" -> the port number, DBNAME="VParrotWebApp"' -> the database name, DATABASE_PASSWORD="" -> without password in local network, MYSQL_DB_USER="root" -> for the user.
 
 ```bash
 DBHOST="127.0.0.1"
 DBPORT="3306"
-DBNAME="VParrotWebAppDB"
-DATABASE_PASSWORD=""
+DBNAME="VParrotWebApp"
+#DATABASE_PASSWORD=""
 MYSQL_DB_USER="root"
 ```
 
 You must start the Apache Web Server and MySQL Database servers in the XAMPP application in the Manage Servers section
 
-With this command, in the terminal of your IDE, you create the VParrotWebAppDB database
+With this command, in the terminal of your IDE, you create the VParrotWebApp database
 
 ```bash
 symfony console doctrine:database:create
@@ -248,7 +248,15 @@ Note:
 
 Link to the online version of the project with 1 000 vehicles recorded in the database using fixtures: [Click here](https://vparrotwebapptest.technidan.com).
 
-## SQL
+## Database SQL insertion
+
+To test the application, if you wish, you can populate the database with the sample data presented in the [VParrotWebApp.sql](/resources/VParrotWebApp.sql) file.
+
+To do this, you must start the Apache Web Server and MySQL Database Server in the Manage Servers section in the XAMPP application if this is not already done and then in an internet browser open [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) and select the VParrotWebApp database and then select the Import tab, click on the Choose file button and select the VParrotWebApp.sql file from your project directory /VParotWebApp/resources/ and then click on the Import button.
+
+Once the import is complete, you can launch the application. Among other data, two users have been inserted into the database:
+1. PARROT Vincent, role_admin, email: admin@email.com, password: test
+2. DOE John, role_employe, email: user1@email.com, password: test.
 
 ## API
 

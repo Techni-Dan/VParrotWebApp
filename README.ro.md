@@ -113,19 +113,19 @@ Dacă node.js nu este instalat în mediul dvs. de lucru, veți găsi informații
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-În fișierul [.env](.env) trebuie să definim informațiile privind accesul la baza de date.  DBHOST="127.0.0.1" -> adresa IP locală, DBPORT="3306" -> numărul portului, DBNAME="VParrotWebAppDB" -> numele bazei de date, DATABASE_PASSWORD="" -> fără o parolă în local, MYSQL_DB_USER="root" -> pentru utilizator.
+În fișierul [.env](.env) trebuie să definim informațiile privind accesul la baza de date.  DBHOST="127.0.0.1" -> adresa IP locală, DBPORT="3306" -> numărul portului, DBNAME="VParrotWebApp" -> numele bazei de date, DATABASE_PASSWORD="" -> fără o parolă în local, MYSQL_DB_USER="root" -> pentru utilizator.
 
 ```bash
 DBHOST="127.0.0.1"
 DBPORT="3306"
-DBNAME="VParrotWebAppDB"
-DATABASE_PASSWORD=""
+DBNAME="VParrotWebApp"
+#DATABASE_PASSWORD=""
 MYSQL_DB_USER="root"
 ```
 
 Trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers
 
-Cu această comandă, în terminalul IDE-ului tău, creezi baza de date VParrotWebAppDB
+Cu această comandă, în terminalul IDE-ului tău, creezi baza de date VParrotWebApp
 
 ```bash
 symfony console doctrine:database:create
@@ -249,7 +249,15 @@ Notă:
 
 Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate în baza de date cu ajutorul fixture-urilor: Faceți [clic aici](https://vparrotwebapptest.technidan.com).
 
-## SQL
+## Introduceți prin SQL în baza de date
+
+Pentru a testa aplicația, dacă doriți, puteți completa baza de date cu datele eșantion prezentate în fișierul [VParrotWebApp.sql](/resources/VParrotWebApp.sql).
+
+Pentru a face acest lucru, trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers dacă acest lucru nu este deja făcut și apoi într-un browser de internet deschideți [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) și selectați baza de date VParrotWebApp și apoi selectați fila Import, faceți clic pe butonul Alegeți fișier și selectați fișierul VParrotWebApp.sql din dosarul proiectului /VParrotWebApp/resources/ și apoi faceți clic pe butonul Import.
+
+Odată ce importul este finalizat, puteți lansa aplicația. Printre alte date, doi utilizatori au fost introduși în baza de date:
+1. PARROT Vincent, role_admin, email: admin@email.com, parolă: test
+2. DOE John, role_employe, e-mail: user1@email.com, parolă: test.
 
 ## API
 

@@ -116,19 +116,19 @@ Si node.js n'est pas installé sur votre environnement de travail vous trouvere 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
 Dans le fichie [.env](.env) on doit définir les informations concernant l'access a la base des données.
-DBHOST="127.0.0.1" -> pour l'addresse IP locale, DBPORT="3306" -> pour le port utilisé, DBNAME="VParrotWebAppDB" -> le nom de la base de données, DATABASE_PASSWORD="" -> sans mot de passe en locale, MYSQL_DB_USER="root" -> pour le nom d'utilisateur.
+DBHOST="127.0.0.1" -> pour l'addresse IP locale, DBPORT="3306" -> pour le port utilisé, DBNAME="VParrotWebApp" -> le nom de la base de données, DATABASE_PASSWORD="" -> sans mot de passe en locale, MYSQL_DB_USER="root" -> pour le nom d'utilisateur.
 
 ```bash
 DBHOST="127.0.0.1"
 DBPORT="3306"
-DBNAME="VParrotWebAppDB"
-DATABASE_PASSWORD=""
+DBNAME="VParrotWebApp"
+#DATABASE_PASSWORD=""
 MYSQL_DB_USER="root"
 ```
 
 Il faut démarrer les serveurs Apache Web Server et MySQL Database dans l'application XAMPP dans la section Manage Servers
 
-Avec cette commande, dans le terminal de votre IDE, vous créez la base de données VParrotWebAppDB
+Avec cette commande, dans le terminal de votre IDE, vous créez la base de données VParrotWebApp
 
 ```bash
 symfony console doctrine:database:create
@@ -253,7 +253,15 @@ Dans l'ensemble, ces fixtures contribuent à rendre le développement de l'appli
 
 > Lien vers la version en ligne du projet avec 1 000 vehicules enregistrées dans la base de données a l'aide de fixtures: [Cliquez ici](https://vparrotwebapptest.technidan.com)
 
-## SQL
+## Insertion SQL dans la base de données
+
+Pour tester l'application, si vous le souhaitez, vous pouvez remplir la base de données avec les exemples de données présentés dans le fichier [VParrotWebApp.sql](/resources/VParrotWebApp.sql).
+
+Pour cela, il faut démarrer les serveurs Apache Web Server et MySQL Database dans l'application XAMPP dans la section Manage Servers si ce n'est pas déjà fait et puis dans un navigateur internet ouvrir [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) et sélectionez la base de données VParrotWebApp et puis sélectionez l'onglet Importer,  cliquez sur le bouton Choisir un fichier et sélectionez le fichier VParrotWebApp.sql depuis le repertoire de votre projet /VParrotWebApp/resources/ et puis cliquez sur le bouton Importer. 
+
+Une fois l'importation terminée, vous pouvez lancer l'application. Parmi d'autres données, deux utilisateurs ont été insérés dans la base de données :
+1. PARROT Vincent, role_admin, email: admin@email.com, mot de passe: test
+2. DOE John, role_employe, email: user1@email.com, mot de passe: test .
 
 ## API
 

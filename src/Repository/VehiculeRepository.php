@@ -185,7 +185,7 @@ class VehiculeRepository extends ServiceEntityRepository
          return $this->paginator->paginate(
              $query,
              $search->page,
-             12
+             6
          );
  
      }
