@@ -13,11 +13,11 @@ class Marque
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     #[Groups(["getVehicules"])]
     private ?int $id = null;
 
-    #[ORM\Column(length: 40)]
+    #[ORM\Column(length: 40, unique: true)]
     #[Groups(["getVehicules"])]
     private ?string $nom = null;
 

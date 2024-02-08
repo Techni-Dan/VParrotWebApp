@@ -17,7 +17,7 @@ class VehiculeImage
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     #[Groups(["getVehicules"])]
     private ?int $id = null;
 

@@ -13,11 +13,11 @@ class Categorie
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     #[Groups(["getVehicules"])]
     private ?int $id = null;
 
-    #[ORM\Column(length: 32)]
+    #[ORM\Column(length: 32, unique: true)]
     #[Groups(["getVehicules"])]
     private ?string $libelle = null;
 

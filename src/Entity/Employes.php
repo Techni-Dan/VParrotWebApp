@@ -17,7 +17,7 @@ class Employes implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(type: 'integer')]
     #[Groups(["getVehicules"])]
     private ?int $id = null;
 

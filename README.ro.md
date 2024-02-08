@@ -166,7 +166,7 @@ Symfony vă returnează parola hashată, trebuie să o copiați.
 
 ```bash
 INSERT INTO `employes` (`id`, `nom`, `prenom`, `email`, `roles`, `password`) VALUES
-(1, 'Parrot', 'Vincent', 'admin@gmail.com', '[\"ROLE_ADMIN\"]', '_parolă_hashată_');
+(1, 'Parrot', 'Vincent', 'admin@email.com', '[\"ROLE_ADMIN\"]', '_parolă_hashată_');
 ```
 
 Atributul $roles al entității [Employes](/src/Entity/Employes.php) este inițializat cu valoarea ["ROLE_EMPLOYE"], astfel încât de fiecare dată când este creat un angajat, rolul este predefinit și nu poate fi modificat în sectiunea de creare a unui nou angajat de către administrator. Modificarea poate fi făcută numai în baza de date prin phpMyAdmin.
@@ -256,8 +256,8 @@ Pentru a testa aplicația, dacă doriți, puteți completa baza de date cu datel
 Pentru a face acest lucru, trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers dacă acest lucru nu este deja făcut și apoi într-un browser de internet deschideți [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) și selectați baza de date VParrotWebApp și apoi selectați fila Import, faceți clic pe butonul Alegeți fișier și selectați fișierul VParrotWebApp.sql din dosarul proiectului /VParrotWebApp/resources/ și apoi faceți clic pe butonul Import.
 
 Odată ce importul este finalizat, puteți lansa aplicația. Printre alte date, doi utilizatori au fost introduși în baza de date:
-1. PARROT Vincent, role_admin, email: admin@email.com, parolă: test
-2. DOE John, role_employe, e-mail: user1@email.com, parolă: test.
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, parolă: test
+2. DOE John, ROLE_EMPLOYE, e-mail: user1@email.com, parolă: test.
 
 ## API
 

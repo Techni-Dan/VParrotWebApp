@@ -165,7 +165,7 @@ In phpMyAdmin in dbparrot database, in employee table in sql tab, you need to in
 
 ```bash
 INSERT INTO `employes` (`id`, `nom`, `prenom`, `email`, `roles`, `password`) VALUES
-(1, 'Parrot', 'Vincent', 'admin@gmail.com', '[\"ROLE_ADMIN\"]', '_hash_password_');
+(1, 'Parrot', 'Vincent', 'admin@email.com', '[\"ROLE_ADMIN\"]', '_hash_password_');
 ```
 
 The $roles attribute of the [Employes](/src/Entity/Employes.php) entity is initialized with the value ["ROLE_EMPLOYE"], so each time an Employee is created, the role is predefined and it cannot be changed in the create a new employee section by the administrator. The change can only be made in the database via phpMyAdmin.
@@ -255,8 +255,8 @@ To test the application, if you wish, you can populate the database with the sam
 To do this, you must start the Apache Web Server and MySQL Database Server in the Manage Servers section in the XAMPP application if this is not already done and then in an internet browser open [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) and select the VParrotWebApp database and then select the Import tab, click on the Choose file button and select the VParrotWebApp.sql file from your project directory /VParotWebApp/resources/ and then click on the Import button.
 
 Once the import is complete, you can launch the application. Among other data, two users have been inserted into the database:
-1. PARROT Vincent, role_admin, email: admin@email.com, password: test
-2. DOE John, role_employe, email: user1@email.com, password: test.
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, password: test
+2. DOE John, ROLE_EMPLOYE, email: user1@email.com, password: test.
 
 ## API
 
