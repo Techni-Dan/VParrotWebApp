@@ -255,13 +255,27 @@ Dans l'ensemble, ces fixtures contribuent à rendre le développement de l'appli
 
 ## Insertion SQL dans la base de données
 
+### Exemple 1:
+
 Pour tester l'application, si vous le souhaitez, vous pouvez remplir la base de données avec les exemples de données présentés dans le fichier [VParrotWebApp.sql](/resources/VParrotWebApp.sql).
+Ce fichier a été généré par PhpMyAdmin après le remplissage de la base de données via l'interface d'administration de l'application.
 
 Pour cela, il faut démarrer les serveurs Apache Web Server et MySQL Database dans l'application XAMPP dans la section Manage Servers si ce n'est pas déjà fait et puis dans un navigateur internet ouvrir [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) et sélectionez la base de données VParrotWebApp et puis sélectionez l'onglet Importer,  cliquez sur le bouton Choisir un fichier et sélectionez le fichier VParrotWebApp.sql depuis le repertoire de votre projet /VParrotWebApp/resources/ et puis cliquez sur le bouton Importer. 
 
 Une fois l'importation terminée, vous pouvez lancer l'application. Parmi d'autres données, deux utilisateurs ont été insérés dans la base de données :
 1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, mot de passe: test
 2. DOE John, ROLE_EMPLOYE, email: user1@email.com, mot de passe: test .
+
+### Exemple 2:
+
+Le fichier [schema.sql](/resources/schema.sql) a été écrit à la main et permet de créer la base de données VParrotWebAppOne et d'insérer des données dans cette base de données via PhpMyAdmin.
+
+Pour cela, il faut démarrer les serveurs Apache Web Server et MySQL Database dans l'application XAMPP dans la section Manage Servers si ce n'est pas déjà fait et puis dans un navigateur internet ouvrir [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) et sélectionez l'onglet Importer,  cliquez sur le bouton Choisir un fichier et sélectionez le fichier schema.sql depuis le repertoire de votre projet /VParrotWebApp/resources/ et puis cliquez sur le bouton Importer. 
+
+Une fois l'importation terminée, vous pouvez lancer l'application. Parmi d'autres données, deux utilisateurs ont été insérés dans la base de données :
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, mot de passe: test
+2. DOE John, ROLE_EMPLOYE, email: user1@email.com, mot de passe: test .
+
 
 ## API
 

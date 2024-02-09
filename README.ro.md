@@ -251,13 +251,27 @@ Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate î
 
 ## Introduceți prin SQL în baza de date
 
+### Exemplul 1:
+
 Pentru a testa aplicația, dacă doriți, puteți completa baza de date cu datele eșantion prezentate în fișierul [VParrotWebApp.sql](/resources/VParrotWebApp.sql).
+Acest fișier a fost generat de PhpMyAdmin după ce baza de date a fost populată prin interfața de administrare a aplicației.
 
 Pentru a face acest lucru, trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers dacă acest lucru nu este deja făcut și apoi într-un browser de internet deschideți [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) și selectați baza de date VParrotWebApp și apoi selectați fila Import, faceți clic pe butonul Alegeți fișier și selectați fișierul VParrotWebApp.sql din dosarul proiectului /VParrotWebApp/resources/ și apoi faceți clic pe butonul Import.
 
 Odată ce importul este finalizat, puteți lansa aplicația. Printre alte date, doi utilizatori au fost introduși în baza de date:
 1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, parolă: test
 2. DOE John, ROLE_EMPLOYE, e-mail: user1@email.com, parolă: test.
+
+### Exemplul 2:
+
+Fișierul [schema.sql](/resources/schema.sql) a fost scris de mână și vă permite să creați baza de date VParrotWebAppOne și să inserați date în această bază de date prin PhpMyAdmin.
+
+Pentru a face acest lucru, trebuie să porniți serverele Apache Web Server și MySQL Database în aplicația XAMPP din secțiunea Manage Servers dacă acest lucru nu este deja făcut și apoi într-un browser de internet deschideți [http://127.0.0.1/phpmyadmin/index.php](http://127.0.0.1/phpmyadmin/index.php) și selectați fila Import, faceți clic pe butonul Alegeți fișier și selectați fișierul schema.sql din dosarul proiectului /VParrotWebApp/resources/ și apoi faceți clic pe butonul Import.
+
+Odată ce importul este finalizat, puteți lansa aplicația. Printre alte date, doi utilizatori au fost introduși în baza de date:
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, parolă: test
+2. DOE John, ROLE_EMPLOYE, e-mail: user1@email.com, parolă: test.
+   
 
 ## API
 
