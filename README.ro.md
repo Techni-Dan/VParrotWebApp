@@ -271,7 +271,8 @@ Pentru a face acest lucru, trebuie să porniți serverele Apache Web Server și 
 Odată ce importul este finalizat, puteți lansa aplicația. Printre alte date, doi utilizatori au fost introduși în baza de date:
 1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, parolă: test
 2. DOE John, ROLE_EMPLOYE, e-mail: user1@email.com, parolă: test.
-   
+
+Pentru a putea lansa aplicația, trebuie mai întâi să modificați numele bazei de date în fișierul [.env](/.env) de la linia 33, DBNAME="VParrotWebAppOne".
 
 ## API
 

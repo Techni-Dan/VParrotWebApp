@@ -276,6 +276,7 @@ Une fois l'importation terminée, vous pouvez lancer l'application. Parmi d'autr
 1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, mot de passe: test
 2. DOE John, ROLE_EMPLOYE, email: user1@email.com, mot de passe: test .
 
+Pour pouvoir lancer l'application, vous devez au préalable modifier le nom de la base de données dans le fichier [.env](/.env) à la ligne 33, DBNAME="VParrotWebAppOne".
 
 ## API
 

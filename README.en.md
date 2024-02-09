@@ -270,6 +270,8 @@ Once the import is complete, you can launch the application. Among other data, t
 1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, password: test
 2. DOE John, ROLE_EMPLOYE, email: user1@email.com, password: test.
 
+To be able to launch the application, you must first modify the name of the database in the [.env](/.env) file on line 33, DBNAME="VParrotWebAppOne".
+
 ## API
 
 An API, or Application Programming Interface, is a set of rules and protocols that enable communication between two distinct software applications. It defines the methods and data formats that applications can use to request and exchange information. An API acts as a bridge, allowing different applications to work together cohesively.
