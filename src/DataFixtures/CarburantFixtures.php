@@ -16,7 +16,7 @@ class CarburantFixtures extends Fixture
     {
       $categories = [
         'Diesel',
-        'Esence',
+        'Essence',
         'Hybride',
         'Électrique',
         'GPL',
