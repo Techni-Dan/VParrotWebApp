@@ -239,13 +239,32 @@ Le fichier [HoraireFixtures.php](/src/DataFixtures/HoraireFixtures.php) crée de
 
 Le fichier [TemoignageFixtures.php](/src/DataFixtures/TemoignageFixtures.php) est une classe de fixtures utilisée pour peupler la base de données avec des données de témoignages fictifs lorsqu'elle est chargée. Ce fichier de fixtures génère de manière aléatoire des témoignages avec des noms, des commentaires et des notes fictifs, et les persiste dans la base de données. Cela peut être utile pour avoir des données de témoignages réalistes lors du développement ou des tests.
 
-Chacun de ces fichiers sert à créer des jeux de données spécifiques dans la base de données, et ils sont interconnectés grâce aux références créées. Lorsque la commande:
+Chacun de ces fichiers sert à créer des jeux de données spécifiques dans la base de données, et ils sont interconnectés grâce aux références créées.
+
+Pour charger ces données dans la base de données, si ce n'est pas déjà fait, vous devez créer la base de données avec la commande:
+
+```bash
+php bin/console doctrine:database:create
+```
+créez la migration avec la commande:
+
+```bash
+symfony console make:migration
+```
+
+migrez vers la base de données avec la commande:
+
+```bash
+symfony console doctrine:migration:migrate
+```
+
+chargez les fixtures dans la base de données avec la commande:
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
 
-est exécutée, ces fixtures sont chargées dans la base de données, créant ainsi un ensemble cohérent de données pour le développement et les tests.
+Cela crée un ensemble cohérent de données pour le développement et les tests.
 
 Dans l'ensemble, ces fixtures contribuent à rendre le développement de l'application plus efficace en fournissant des données cohérentes et diversifiées pour les différentes entités de l'application, facilitant ainsi les tests et la validation des fonctionnalités.
 

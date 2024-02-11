@@ -236,12 +236,32 @@ Fișierul [HoraireFixtures.php](/src/DataFixtures/HoraireFixtures.php) creează 
 
 Fișierul [TemoignageFixtures.php](/src/DataFixtures/TemoignageFixtures.php) este o clasă de fixture-uri utilizată pentru a popula baza de date cu date de marturii fictive atunci când este încărcată. Acest fișier de fixture-uri generează în mod aleatoriu mărturii cu nume, comentarii și note fictive, persistându-le în baza de date. Acest lucru poate fi util pentru a avea date realiste despre mărturii în timpul dezvoltării sau testelor.
 
-Fiecare dintre aceste fișiere este folosit pentru a crea seturi specifice de date în baza de date, iar acestea sunt interconectate prin referințele create. Când este executată comanda:
+Fiecare dintre aceste fișiere este folosit pentru a crea seturi specifice de date în baza de date, iar acestea sunt interconectate prin referințele create. 
+
+Pentru a încărca aceste date în baza de date, dacă încă nu ați făcut asta, trebuie să creați baza de date cu comanda:
+
+```bash
+php bin/console doctrine:database:create
+```
+creați migrarea cu comanda:
+
+```bash
+consola symfony make:migration
+```
+
+migrați în baza de date cu comanda:
+
+```bash
+consola symfony doctrine:migration:migrate
+```
+
+încărcați fixturile în baza de date cu comanda:
 
 ```bash
 php bin/console doctrine:fixtures:load
 ```
-aceste fixture-uri sunt încărcate în baza de date, creând astfel un set consecvent de date pentru dezvoltare și teste.
+
+Acest lucru creează un set coerent de date pentru dezvoltare și testare.
 
 În ansamblu, aceste fixture-uri contribuie la eficientizarea dezvoltării aplicației, furnizând date consistente și diversificate pentru diferitele entități ale aplicației, facilitând astfel testarea și validarea funcționalităților.
 
