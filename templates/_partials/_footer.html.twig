@@ -1,17 +1,18 @@
 <footer class="container-fluid bg-dark text-white text-center py-2">
 	<div class="row">
-		<div class="col-md-4 mb-3">
+		<div class="col-md-4 mb-3 text-center text-md-center">
+    <div class="d-inline-flex align-items-center text-white">
 			<table class="" id="openingHoursTable">
 				<thead>
 					<tr>
-						<th scoop="col" colspan="2">Horaire d'ouverture</th>
+						<th scoop="col" colspan="2" class="mb-5 text-warning">Horaire d'ouverture</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for _horaire in horaire.getHoraire %}
 						<tr>
-							<th scoope="row" class="">{{_horaire.jour}}:</th>
-							<td class="" id="{{_horaire.jour}}">
+							<th scoope="row">{{_horaire.jour}}:</th>
+							<td id="{{_horaire.jour}}">
 								{{_horaire.ouverturematin}}-{{_horaire.fermeturemidi}},
 								{{_horaire.ouvertureapresmidi}}-{{_horaire.fermeturesoir}}
 							</td>
@@ -19,21 +20,22 @@
 					{% endfor %}
 				</tbody>
 			</table>
+      </div>
 		</div>
 		<div class="col-md-4 mt-3 mb-3">
 			<p>© Copyright 2024</p>
-			<a href="https://www.x.com" target="_blank" class="text-white px-2"><i class="fa-brands fa-x"></i></a>
-			<a href="https://www.instagram.com" target="_blank" class="text-white px-2"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.facebook.com" target="_blank" class="text-white px-2"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.linkedin.com" target="_blank" class="text-white px-2"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://www.youtube.com" target="_blank" class="text-white px-2"><i class="fa-brands fa-youtube"></i></a>
+			<a href="https://www.x.com" target="_blank" title="X" class="text-white px-2"><i class="fa-brands fa-x"></i></a>
+			<a href="https://www.instagram.com" target="_blank" title="Instagram" class="text-white px-2"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank" title="Facebook" class="text-white px-2"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.linkedin.com" target="_blank" title="Linkedin" class="text-white px-2"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.youtube.com" target="_blank" title="YouTube" class="text-white px-2"><i class="fa-brands fa-youtube"></i></a>
 		</div>
-		<div class="col-md-4 mt-3">
+		<div class="col-md-4 mt-3 mb-5">
 			<a class="nav-link" href="{{path('page_cgu')}}">CGU</a>
 			<a class="nav-link" href="{{path('mentions_legales')}}">Mentions légales</a>
 			<p><br><br>
 				<i class="fa-solid fa-location-dot fa-bounce"></i>
-				Adresse :<a class="nav-link" href="https://goo.gl/maps/s761phYgSsD2Vii78" target="_blank">Toulouse, France</a>
+				Adresse :<a class="nav-link" href="https://goo.gl/maps/s761phYgSsD2Vii78" target="_blank" title="Toulouse, France">Toulouse, France</a>
 			</p>
 		</div>
 	</div>

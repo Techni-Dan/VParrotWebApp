@@ -13,6 +13,7 @@ class ModeleFixtures extends Fixture implements DependentFixtureInterface
   private $counter = 1;
   private $i = 1;
   private $j = 1;
+  private $k = 1;
   public function load(ObjectManager $manager)
   {
     $modelsByMarque = [
@@ -143,7 +144,7 @@ class ModeleFixtures extends Fixture implements DependentFixtureInterface
       $marque = $this->getReference('mar-' . $this->i);
       $marqueId = $this->i;
       //var_dump("Marque ID : ".$marqueId); 
-      $this->i++;
+      
 
       foreach ($modeleNoms as $modeleNom) {
        
@@ -152,14 +153,16 @@ class ModeleFixtures extends Fixture implements DependentFixtureInterface
         $modele->setMarque($marque);
 
         $manager->persist($modele);
-        $this->addReference("mod-$this->j-" . $this->counter, $modele);
+        $this->addReference("mod-$this->i-" . $this->j, $modele);
 
         // Add debugging statement
-        //var_dump("Modele Reference: mod-".$this->j."-" . $this->counter);
+        //var_dump("Modele Reference from modele: mod-".$this->i."-" . $this->j);
 
         $this->j++;
         $this->counter++;
+        $this->k++;
       }
+      $this->i++;
       $this->counter = 1;
     }
     $manager->flush();

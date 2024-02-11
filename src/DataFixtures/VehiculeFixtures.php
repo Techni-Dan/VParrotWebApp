@@ -20,7 +20,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
   {
     $faker = Factory::create('fr_FR');
 
-    for ($i = 0; $i < 1000; $i++) {
+    for ($i = 0; $i < 800; $i++) {
       $vehicule = new Vehicule();
       $vehicule->setPrix($faker->numberBetween(1000, 4000000));
       $vehicule->setAnnee($faker->year);
@@ -98,51 +98,12 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
     //var_dump("Random reference : " . $randomModeleReference);
     return $this->getReference($randomModeleReference);
   }
-  /*
   private function getRandomModeleReferenceForMarque($marque, $manager)
 {
+    
     $marqueId = $marque->getId();
-    var_dump("MarqueID:".$marqueId);
-    $matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-");
-
-    if (empty($matchingModeleReferences)) {
-        throw new \RuntimeException("No matching modele references found for marque with ID $marqueId");
-    }
-
-    return $matchingModeleReferences[array_rand($matchingModeleReferences)];
-}*/
-  /*
-  private function getRandomModeleReferenceForMarque($marque, $manager)
-  {
-    $marqueId = $marque->getId();
-    var_dump("MarqueID:" . $marqueId);
-    $matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-");
-
-    if (empty($matchingModeleReferences)) {
-      throw new \RuntimeException("No matching modele references found for marque with ID $marqueId");
-    }
-
-    // Adjust the Modele IDs based on the actual range of Modele IDs
-    $adjustedModeleIds = array_map(function ($ref) {
-      // Extract the Modele ID from the reference
-      preg_match('/mod-\d+-(\d+)/', $ref, $matches);
-      return $matches[1];
-    }, $matchingModeleReferences);
-
-    // Randomly choose a Modele ID from the adjusted list
-    $randomModeleId = $adjustedModeleIds[array_rand($adjustedModeleIds)];
-
-    // Build the Modele reference using the correct Marque ID and the randomly chosen Modele ID
-    $randomModeleReference = "mod-$marqueId-$randomModeleId";
-
-    return $randomModeleReference;
-  }*/
-  private function getRandomModeleReferenceForMarque($marque, $manager)
-{
-    $marqueId = 1;
     //var_dump("Marque ID: " . $marqueId);
-    //$matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-1");
-    $matchingModeleReferences = ["mod-1820-5", "mod-125-8"];
+    $matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-");
     if (empty($matchingModeleReferences)) {
         throw new \RuntimeException("No matching modele references found for marque with ID $marqueId");
     }
@@ -159,7 +120,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
 
     foreach ($referenceRepository->findAll() as $reference) {
       $key = $this->getReferenceKey($reference);
-      //var_dump($key);
+      //var_dump("Reference key Marque ID:" . $key);
       if (strpos($key, $prefix) === 0) {
         $references[] = $key;
       }
@@ -172,15 +133,6 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
   {
       $reflClass = new \ReflectionClass($reference);
       $marqueId = $reference->getMarque()->getId(); // Assuming Marque is the owning side of the relationship
-  
       return "mod-$marqueId-" . $reference->getId();
   }
-  
-/*
-  private function getReferenceKey($reference)
-  {
-    $reflClass = new \ReflectionClass($reference);
-
-    return strtolower($reflClass->getShortName()) . '-' . $reference->getId();
-  }*/
 }

@@ -17,9 +17,9 @@ class VehiculeImageFixtures extends Fixture implements DependentFixtureInterface
     {
         //$faker = Factory::create('fr_FR');
 
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 800; $i++) {
             $vehiculeImage = new VehiculeImage();
-            $vehiculeImage->setImageName('chiron-65b5ff2b8d2ff938772840.jpeg');
+            $vehiculeImage->setImageName('chiron-65c064afdac60846941615.jpeg');
             $vehiculeImage->setImageSize('67496');
             $vehiculeImage->setUpdatedAt(new \DateTimeImmutable()); 
             

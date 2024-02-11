@@ -60,7 +60,7 @@ Contact information, including the form, is also visible at the bottom of each u
 
 - dependency management in PHP: [Composer version 2.6.5](https://getcomposer.org/download/)
 
-- developer tool to build, run, and manage your Symfony applications: [Symfony CLI version 5.8.6(https://symfony.com/download)
+- developer tool to build, run, and manage your Symfony applications: [Symfony CLI version 5.8.6](https://symfony.com/download)
 
 - JavaScript runtime: [Node.js 20.11.0](https://nodejs.org/en/download)
 
@@ -215,7 +215,7 @@ To stop the development server, use the command Control+C for MacOS or CTRL+C fo
 
 Fixtures in the context of this Symfony project are predefined test data used to populate the database with fictitious information, simulating the application's operation in a development environment. They are particularly useful for assessing the application's proper functioning, testing various features, and ensuring data consistency. The fixture files are located in the [/src/DataFixtures/](/src/DataFixtures) directory.
 
-The [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) file is responsible for creating 1000 vehicle entries, each generated with random data using the Faker library. This data includes details such as price, year of registration, mileage, description, options, and more. Vehicles are randomly associated with brands, models, categories, fuels, types, and employees, providing a variety of realistic data.
+The [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) file is responsible for creating 800 vehicle entries, each generated with random data using the Faker library. This data includes details such as price, year of registration, mileage, description, options, and more. Vehicles are randomly associated with brands, models, categories, fuels, types, and employees, providing a variety of realistic data.
 
 The [MarqueFixtures.php](/src/DataFixtures/MarqueFixtures.php) file creates instances of the Marque class with predefined brand names, saving each instance in the database. It also registers a reference for each brand, allowing them to be retrieved in other fixtures.
 

@@ -216,7 +216,7 @@ Pentru a opri serverul de dezvoltare, utilizați comanda Control+C pentru MacOS 
 
 Fixture-urile în cadrul acestui proiect Symfony reprezintă date de test predefinite utilizate pentru popularea bazei de date cu informații fictive, simulând astfel funcționarea aplicației într-un mediu de dezvoltare. Acestea sunt deosebit de utile pentru evaluarea bunei funcționări a aplicației, testarea diferitelor funcționalități și asigurarea consistenței datelor. Fișierele de fixture se găsesc în directorul /src/DataFixtures/.
 
-Fișierul [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) este responsabil de crearea a 1000 de înregistrări de vehicule, fiecare generată cu date aleatorii folosind biblioteca Faker. Aceste date includ detalii precum preț, anul înregistrării, kilometraj, descriere, opțiuni și altele. Vehiculele sunt asociate aleatoriu cu mărci, modele, categorii, carburanți, tipuri și angajați, oferind astfel o varietate de date realiste.
+Fișierul [VehiculeFixtures.php](/src/DataFixtures/VehiculeFixtures.php) este responsabil de crearea a 800 de înregistrări de vehicule, fiecare generată cu date aleatorii folosind biblioteca Faker. Aceste date includ detalii precum preț, anul înregistrării, kilometraj, descriere, opțiuni și altele. Vehiculele sunt asociate aleatoriu cu mărci, modele, categorii, carburanți, tipuri și angajați, oferind astfel o varietate de date realiste.
 
 Fișierul [MarqueFixtures.php](/src/DataFixtures/MarqueFixtures.php) creează instanțe ale clasei Marque cu nume de mărci predefinite, salvând fiecare instanță în baza de date. De asemenea, înregistrează o referință pentru fiecare marcă, permițând recuperarea acestora în alte fixture-uri.
 
