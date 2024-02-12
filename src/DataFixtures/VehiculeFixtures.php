@@ -85,22 +85,8 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
     ];
   }
 
-  private function getRandomModeleForMarque($marque, $manager)
-  {
-    $marqueId = $marque->getId();
-    $matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-");
-
-    if (empty($matchingModeleReferences)) {
-      throw new \RuntimeException("No matching modele references found for marque with ID $marqueId");
-    }
-
-    $randomModeleReference = $matchingModeleReferences[array_rand($matchingModeleReferences)];
-    //var_dump("Random reference : " . $randomModeleReference);
-    return $this->getReference($randomModeleReference);
-  }
   private function getRandomModeleReferenceForMarque($marque, $manager)
 {
-    
     $marqueId = $marque->getId();
     //var_dump("Marque ID: " . $marqueId);
     $matchingModeleReferences = $this->getReferencesByPrefix($manager, "mod-$marqueId-");
@@ -110,8 +96,6 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
 
     return $matchingModeleReferences[array_rand($matchingModeleReferences)];
 }
-
-
 
   private function getReferencesByPrefix($manager, $prefix)
   {

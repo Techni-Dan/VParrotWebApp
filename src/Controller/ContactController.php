@@ -48,7 +48,6 @@ class ContactController extends AbstractController
       try {
         $mailer->send($email);
         $this->addFlash('success', 'Votre message a été envoyé.');
-        $success = true;
       } catch (TransportExceptionInterface $e) {
         echo $e->getDebug();
         // some error prevented the email sending; display an
@@ -61,7 +60,6 @@ class ContactController extends AbstractController
 
     return $this->render('contact/index.html.twig', [
       'contact_form' => $form->createView(),
-      'success' => $success ?? false // Default to false if not set
     ]);
   }
 }
