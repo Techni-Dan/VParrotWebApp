@@ -23,7 +23,7 @@ class VehiculeFixtures extends Fixture implements DependentFixtureInterface
     for ($i = 0; $i < 800; $i++) {
       $vehicule = new Vehicule();
       $vehicule->setPrix($faker->numberBetween(1000, 4000000));
-      $vehicule->setAnnee($faker->year);
+      $vehicule->setAnnee($faker->numberBetween(1980, 2024));
       $vehicule->setKilometrage($faker->numberBetween(1000, 300000));
       $vehicule->setDescription($faker->text);
       $vehicule->setOptions($faker->text);

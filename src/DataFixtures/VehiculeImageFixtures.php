@@ -20,7 +20,7 @@ class VehiculeImageFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i < 800; $i++) {
             $vehiculeImage = new VehiculeImage();
             $vehiculeImage->setImageName('chiron-65c064afdac60846941615.jpeg');
-            $vehiculeImage->setImageSize('67496');
+            $vehiculeImage->setImageSize(67496);
             $vehiculeImage->setUpdatedAt(new \DateTimeImmutable()); 
             
             $vehicule = $this->getReference('veh-' . $this->counter);

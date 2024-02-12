@@ -17,7 +17,6 @@ use Doctrine\ORM\EntityManagerInterface;
 class VehiculeCrudController extends AbstractCrudController
 {
     private $security;
-    private $currentEmploye;
   
     public function __construct(Security $security)
     {

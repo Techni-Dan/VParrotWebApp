@@ -18,7 +18,7 @@ use Doctrine\ORM\EntityManagerInterface;
 class TemoignageCrudController extends AbstractCrudController
 {
     private $security;
-    private $employe;
+    //private $employe;
 
     public function __construct(Security $security)
     {

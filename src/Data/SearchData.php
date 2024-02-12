@@ -1,6 +1,12 @@
 <?php
 namespace App\Data;
 
+use App\Entity\Marque;
+use App\Entity\Modele;
+use App\Entity\Categorie;
+use App\Entity\Type;
+use App\Entity\Carburant;
+
 class SearchData
 {
 

@@ -112,7 +112,7 @@ If node.js is not installed on your work environment, you will find information 
 
 - [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-In the [.env](.env) file  we must define the information concerning the access to the database. DBHOST="127.0.0.1" -> the IP address, DBPORT="3306" -> the port number, DBNAME="VParrotWebApp"' -> the database name, DATABASE_PASSWORD="" -> without password in local network, MYSQL_DB_USER="root" -> for the user.
+In the [.env](.env) file  we must define the information concerning the access to the database. DBHOST="127.0.0.1" -> the IP address, DBPORT="3306" -> the port number, DBNAME="VParrotWebApp" -> the database name, DATABASE_PASSWORD="" -> without password in local network, MYSQL_DB_USER="root" -> for the user.
 
 ```bash
 DBHOST="127.0.0.1"
@@ -264,7 +264,11 @@ This creates a coherent set of data for development and testing.
 
 Overall, these fixtures contribute to making the application development more efficient by providing consistent and diversified data for different entities of the application, facilitating testing and feature validation.
 
-Note:
+You can launch the application. Among other data, users have been inserted into the database:
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, password: test
+2. Employe1 Prenom1, ROLE_EMPLOYE, email: user1@email.com, password: test.
+
+**Note:**
 
 Link to the online version of the project with 1 000 vehicles recorded in the database using fixtures: [Click here](https://vparrotwebapptest.technidan.com).
 

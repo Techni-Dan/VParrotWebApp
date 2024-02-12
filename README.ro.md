@@ -265,7 +265,11 @@ Acest lucru creează un set coerent de date pentru dezvoltare și testare.
 
 În ansamblu, aceste fixture-uri contribuie la eficientizarea dezvoltării aplicației, furnizând date consistente și diversificate pentru diferitele entități ale aplicației, facilitând astfel testarea și validarea funcționalităților.
 
-Notă:
+Puteți lansa aplicația. Printre alte date, utilizatori au fost introduși în baza de date:
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, parolă: test
+2. Employe1 Prenom1, ROLE_EMPLOYE, e-mail: user1@email.com, parolă: test.
+
+**Notă:**
 
 Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate în baza de date cu ajutorul fixture-urilor: Faceți [clic aici](https://vparrotwebapptest.technidan.com).
 

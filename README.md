@@ -268,6 +268,10 @@ Cela crée un ensemble cohérent de données pour le développement et les tests
 
 Dans l'ensemble, ces fixtures contribuent à rendre le développement de l'application plus efficace en fournissant des données cohérentes et diversifiées pour les différentes entités de l'application, facilitant ainsi les tests et la validation des fonctionnalités.
 
+Vous pouvez lancer l'application. Parmi d'autres données, des utilisateurs ont été insérés dans la base de données :
+1. PARROT Vincent, ROLE_ADMIN, email: admin@email.com, mot de passe: test
+2. Employe1 Prenom1, ROLE_EMPLOYE, email: user1@email.com, mot de passe: test .
+
 **Note:**
 
 > Lien vers la version en ligne du projet avec 1 000 vehicules enregistrées dans la base de données a l'aide de fixtures: [Cliquez ici](https://vparrotwebapptest.technidan.com)

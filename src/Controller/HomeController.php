@@ -25,7 +25,7 @@ class HomeController extends AbstractController
         $form = $this->createForm(TemoignageType::class, $temoignage);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $temoignage->setApprouve('0');
+            $temoignage->setApprouve(false);
             $entityManager->persist($temoignage);
             $entityManager->flush();
             $this->addFlash('success', 'Votre commentaire a été envoyé. Il sera publié après modération');
