@@ -33,6 +33,7 @@ class Vehicule
 
     #[ORM\Column(length: 255)]
     #[Groups(["getVehicules"])]
+    #[Assert\Length(max: 255)]
     private ?string $titre = null;
 
     #[ORM\Column]
@@ -46,6 +47,11 @@ class Vehicule
 
     #[ORM\Column]
     #[Groups(["getVehicules"])]
+    #[Assert\Range(
+      min: 1970,
+      max: 2024,
+      notInRangeMessage: 'L\'année doit être comprise entre {{ min }} et {{ max }}.'
+    )]
     private ?int $annee = null;
 
     #[ORM\Column]

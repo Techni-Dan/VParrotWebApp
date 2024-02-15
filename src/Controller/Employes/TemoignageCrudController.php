@@ -61,6 +61,5 @@ class TemoignageCrudController extends AbstractCrudController
           yield AssociationField::new('employe');
         }
         
-    }
-    
+    } 
 }
