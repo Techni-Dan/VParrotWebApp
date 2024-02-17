@@ -39,10 +39,6 @@
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
-
-				{#{% for image in exemplaire.image %}
-				<img class="img-fluid rounded" src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="Image Vehicule">
-				{% endfor %}#}
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><strong>Categorie de véhicule :</strong> {{exemplaire.categorie}}</li>
 					<li class="list-group-item"><strong>Marque :</strong> {{exemplaire.marque}}</li>
@@ -52,11 +48,11 @@
 				</ul>
 				<div class="card-body">
 					<h3>Descrition</h3>
-					<p class="card-text">{{exemplaire.description|raw|nl2br}}</p>
+					<p class="card-text">{{exemplaire.description|raw|nl2br|sanitize_html}}</p>
 				</div>
 				<div class="card-body">
 					<h3>Options</h3>
-					<p class="card-text">{{exemplaire.options|raw|nl2br}}</p>
+					<p class="card-text">{{exemplaire.options|raw|nl2br|sanitize_html}}</p>
 				</div>
 				<div class="card-footer text-muted">
           Ajoutée par:
