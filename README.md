@@ -343,3 +343,7 @@ Chaque route utilise le format JSON pour la réponse, et les données sont séri
 [Diagramme de séqence 1](/resources/Diagramme_de_sequence.jpg)
 
 [Diagramme de séqence 2](/resources/Diagramme%20de%20sequence_2.jpg)
+
+## Gestion du projet
+
+[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}

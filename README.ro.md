@@ -340,6 +340,6 @@ Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializ
 
 [Diagrame de secvență 2](/resources/Diagramme%20de%20sequence_2.jpg)
 
+## Managementum proiectului
 
-
-
+[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}

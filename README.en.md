@@ -337,3 +337,7 @@ Each route uses the JSON format for the response, and the data is serialized usi
 [Sequence diagram 1](/resources/Diagramme_de_sequence.jpg)
 
 [Sequence diagram 2](/resources/Diagramme%20de%20sequence_2.jpg)
+
+## Project management
+
+[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}
