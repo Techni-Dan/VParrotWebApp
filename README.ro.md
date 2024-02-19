@@ -271,7 +271,9 @@ Puteți lansa aplicația. Printre alte date, utilizatori au fost introduși în 
 
 **Notă:**
 
-Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate în baza de date cu ajutorul fixture-urilor: Faceți [clic aici](https://vparrotwebapptest.technidan.com).
+> Link către versiunea online a proiectului cu 1 000 de vehicule înregistrate în baza de date cu ajutorul fixture-urilor: Faceți [clic aici](https://vparrotwebapptest.technidan.com).
+
+> Dacă primiți o eroare la încărcarea fixturilor, este probabil din cauza referințe cheilor. Pentru a rezolva această problemă, trebuie să ștergeți baza de date și migrarea, apoi să recreați baza de date, să creați migrarea, să efectuați migrarea și apoi să încărcați fixturile. 
 
 ## Introduceți prin SQL în baza de date
 

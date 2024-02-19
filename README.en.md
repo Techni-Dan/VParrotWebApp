@@ -270,7 +270,9 @@ You can launch the application. Among other data, users have been inserted into 
 
 **Note:**
 
-Link to the online version of the project with 1 000 vehicles recorded in the database using fixtures: [Click here](https://vparrotwebapptest.technidan.com).
+> Link to the online version of the project with 1 000 vehicles recorded in the database using fixtures: [Click here](https://vparrotwebapptest.technidan.com).
+
+> If you get an error when loading the fixtures, it's probably because of the key reference. To resolve this issue, you must drop the database and delete the migration, then recreate the database, create the migration, perform the migration, and then load the fixtures.
 
 ## Database SQL insertion
 
