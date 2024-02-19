@@ -276,7 +276,7 @@ Vous pouvez lancer l'application. Parmi d'autres données, des utilisateurs ont 
 
 > Lien vers la version en ligne du projet avec 1 000 vehicules enregistrées dans la base de données a l'aide de fixtures: [Cliquez ici](https://vparrotwebapptest.technidan.com)
 
-> Si vous obtenez une erreur lors du chargement des fixtures, c'est probablement à cause des référence des clés. Pour résoudre ce problème, vous devez supprimer la base de données et la migration, puis recréer la base de données, créer la migration, effectuer la migration, puis charger les fixtures.
+> Si vous obtenez une erreur lors du chargement des fixtures, c'est probablement à cause de références des clés. Pour résoudre ce problème, vous devez supprimer la base de données et la migration, puis recréer la base de données, créer la migration, effectuer la migration, puis charger les fixtures.
 
 ## Insertion SQL dans la base de données
 
