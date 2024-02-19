@@ -344,4 +344,4 @@ Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializ
 
 ## Managementum proiectului
 
-[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}
+[Link](https://github.com/orgs/Techni-Dan/projects/2)

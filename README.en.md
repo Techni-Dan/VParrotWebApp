@@ -342,4 +342,4 @@ Each route uses the JSON format for the response, and the data is serialized usi
 
 ## Project management
 
-[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}
+[Link](https://github.com/orgs/Techni-Dan/projects/2)

@@ -348,4 +348,4 @@ Chaque route utilise le format JSON pour la réponse, et les données sont séri
 
 ## Gestion du projet
 
-[GitHub]{https://github.com/orgs/Techni-Dan/projects/2}
+[Lien](https://github.com/orgs/Techni-Dan/projects/2)
