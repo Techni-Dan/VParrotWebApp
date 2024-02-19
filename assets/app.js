@@ -11,8 +11,11 @@ import noUiSlider from '../node_modules/nouislider/dist/nouislider';
 import '../node_modules/nouislider/dist/nouislider.css'
 import Filter from './modules/Filter'
 
+// Creating a new Filter instance for the '.js-filter' element
 new Filter(document.querySelector('.js-filter'))
 
+// Setting up sliders for price, km, and year
+// Price Slider
 const prixSlider = document.getElementById('prix-slider');
 
 if (prixSlider) {
@@ -47,7 +50,7 @@ if (prixSlider) {
     })
 }
 
-
+// Km Slider
 const kmSlider = document.getElementById('km-slider');
 
 if (kmSlider) {
@@ -82,8 +85,9 @@ if (kmSlider) {
     })
 }
 
-
+// // Year Slider
 const anneeSlider = document.getElementById('annee-slider');
+
 if (anneeSlider) {
     const anneemin = document.getElementById('anneemin');
     const anneemax = document.getElementById('anneemax');

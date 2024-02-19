@@ -20,7 +20,7 @@
 						- km
 					</h6>
 				</div>
-				{#{{ vich_uploader_asset(exemplaire, 'exemplaireImages') }}#}
+        {# Image Carousel #}
 				<div class="carousel-inner"></div>
 				<div id="carouselExampleFade" class="carousel slide carousel-fade">
 					<div class="carousel-inner">
@@ -39,6 +39,7 @@
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
+        {# Vehicle Details #}
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><strong>Categorie de véhicule :</strong> {{exemplaire.categorie}}</li>
 					<li class="list-group-item"><strong>Marque :</strong> {{exemplaire.marque}}</li>
@@ -46,27 +47,33 @@
 					<li class="list-group-item"><strong>Type de véhicule :</strong> {{exemplaire.type}}</li>
 					<li class="list-group-item"><strong>Carburant:</strong> {{exemplaire.carburant}}</li>
 				</ul>
+        {# Vehicle Description #}
 				<div class="card-body">
 					<h3>Descrition</h3>
 					<p class="card-text">{{exemplaire.description|raw|nl2br|sanitize_html}}</p>
 				</div>
+        {# Vehicle Options #}
 				<div class="card-body">
 					<h3>Options</h3>
 					<p class="card-text">{{exemplaire.options|raw|nl2br|sanitize_html}}</p>
 				</div>
+        {# Added by Employee #}
 				<div class="card-footer text-muted">
           Ajoutée par:
           {% for employe in exemplaire.employe %}
             <p class="card-text">{{ employe.prenom }}</p>
           {% endfor %}
+        {# Date of Addition #}
         </div>
 	      <div class="card-footer text-muted">Date d'ajout: {{exemplaire.DateAjout|date('d-m-Y H:i:s') }}</div>
 			</div>
+      {# Back to Vehicles List Link #}
       <div class="card-body">
 					<a href="{{path('app_occasions_page')}}" class="card-link">Retour à la liste des véhicules</a>
 				</div>
 		</div>
 	</div>
+  {# Contact Form #}
 	<div class="container w-75 mt-5">
 		<h4>Demandez d'information supplémentaire sur ce véhicule en remplissant ce formulaire</h4>
 		<p>Ou appelez notre équipe par téléphone au:<a class="ms-2" href="tel://+33123456789">01 23 45 67 89</a>

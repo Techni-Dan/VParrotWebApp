@@ -89,7 +89,8 @@ class VehiculeRepository extends ServiceEntityRepository
              ->getScalarResult();
          return [(int)$results[0]['anneemin'], (int)$results[0]['anneemax']];
      }
- 
+     
+     // Constructs the base query for vehicle searches.
      private function getSearchQuery(SearchData $search, $ignorePrix = false, $ignoreKm = false, $ignoreAnnee = false): QueryBuilder
      {
          $query = $this
@@ -112,7 +113,7 @@ class VehiculeRepository extends ServiceEntityRepository
           $query = $query
               ->andWhere('d.id IN (:modele)')
               ->setParameter('modele', $search->modele);
-      }
+        }
 
         if(!empty($search->categorie)) {
             $query = $query
@@ -172,7 +173,7 @@ class VehiculeRepository extends ServiceEntityRepository
      }
  
      /**
-      * Récupère les produits en lien avec une recherce
+      * Récupère les vehicules en lien avec une recherce
       * @return PaginationInterface
       */
  
@@ -181,7 +182,6 @@ class VehiculeRepository extends ServiceEntityRepository
          
  
          $query = $this->getSearchQuery($search)->getQuery();
-         //$query = $this->orderBy('p.id', 'DESC');
          return $this->paginator->paginate(
              $query,
              $search->page,

@@ -31,6 +31,7 @@ class ContactController extends AbstractController
       $contact->setDateEnvoi(new DateTime());
       $entityManager->persist($contact);
       $entityManager->flush();
+      // Create a new email message
       $email = (new Email())
         ->priority(Email::PRIORITY_HIGH)
         ->from($contact->getEmail())
@@ -44,9 +45,10 @@ class ContactController extends AbstractController
             'Date : ' . $contact->getDateEnvoi()->format('Y-m-d H:i:s'),
           'text/plain'
         );
-
+      // Try to send the email using the Gmail service
       try {
         $mailer->send($email);
+        // Display success message on successful email sending
         $this->addFlash('success', 'Votre message a été envoyé.');
       } catch (TransportExceptionInterface $e) {
         echo $e->getDebug();
@@ -54,8 +56,10 @@ class ContactController extends AbstractController
         // error message or try to resend the message
 
       }
+      // Redirect to the contact form page after successful submission
       return $this->redirectToRoute('app_contact');
     }
+    // Render the contact form template
     return $this->render('contact/index.html.twig', [
       'contact_form' => $form->createView(),
     ]);
