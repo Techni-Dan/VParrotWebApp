@@ -75,40 +75,4 @@ class VehiculesController extends AbstractController
 
     return new JsonResponse($jsonVehicules, Response::HTTP_OK, [], true);
   }
-
-  #[Route(path: 'api/vehiculesby/{marque}', name: "api_vehiculesby_marque", methods: ['GET'])]
-  public function vehiculesByMarque(VehiculeRepository $vehiculesRepository, SerializerInterface $serializer, PaginatorInterface $paginator, Request $request, string $marque): JsonResponse
-  {
-    // Use the repository to get vehicles filtered by marque
-    $vehicules = $vehiculesRepository->findByMarque($marque);
-
-    // Paginate the results
-    $vehiculesPager = $paginator->paginate(
-      $vehicules,
-      $request->query->getInt('page', 1),
-      3
-    );
-
-    // Transform the paginated data into the desired format
-    $data = [];
-    foreach ($vehiculesPager->getItems() as $key => $value) {
-      $dataItem = [
-        'vehicules' => $value
-      ];
-      $data[] = $dataItem;
-    }
-
-    $getData = [
-      'data' => $data,
-      'current_page_number' => $vehiculesPager->getCurrentPageNumber(),
-      'number_per_page' => $vehiculesPager->getItemNumberPerPage(),
-      'total_count' => $vehiculesPager->getTotalItemCount()
-    ];
-
-    // Serialize and return the response
-    $context = SerializationContext::create()->setGroups("getVehicules");
-    $jsonVehicules = $serializer->serialize($getData, 'json', $context);
-
-    return new JsonResponse($jsonVehicules, Response::HTTP_OK, [], true);
-  }
 }
