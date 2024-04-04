@@ -348,4 +348,4 @@ Chaque route utilise le format JSON pour la réponse, et les données sont séri
 
 ## Gestion du projet
 
-[Lien](https://github.com/orgs/Techni-Dan/projects/2)
+[Lien Trello](https://trello.com/invite/b/dgUV8RYD/ATTI189616a6e0ff510e6d90fbe8b697cea2EA540D2E/ecf-vincent-parrot)

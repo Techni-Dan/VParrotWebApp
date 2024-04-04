@@ -344,4 +344,4 @@ Fiecare rută folosește formatul JSON pentru răspuns, iar datele sunt serializ
 
 ## Managementum proiectului
 
-[Link](https://github.com/orgs/Techni-Dan/projects/2)
+[Link Trello](https://trello.com/invite/b/dgUV8RYD/ATTI189616a6e0ff510e6d90fbe8b697cea2EA540D2E/ecf-vincent-parrot)
