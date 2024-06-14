@@ -4,7 +4,6 @@
  * @property {HTMLElement} sorting
  * @property {HTMLFormElement} form
  * @property {number} page
- * @property {boolean} moreNav
  */
 export default class Filter {
 
@@ -16,7 +15,7 @@ export default class Filter {
       return
     }
 
-     // Initializing properties
+    // Initializing properties
     this.pagination = element.querySelector('.js-filter-pagination')
     this.content = element.querySelector('.js-filter-content')
     this.sorting = element.querySelector('.js-filter-sorting')
@@ -37,13 +36,28 @@ export default class Filter {
     // Adding event listeners
     this.sorting.addEventListener('click', aClickListener)
     this.pagination.addEventListener('click', aClickListener)
-     // Event listeners for form inputs
+    // Event listeners for form inputs
     this.form.querySelectorAll('input').forEach(input => {
       input.addEventListener('change', this.loadForm.bind(this))
     })
     this.form.querySelectorAll('select').forEach(select => {
       select.addEventListener('change', this.loadForm.bind(this))
+      //console.log("Event listener attached for:", select);
+      //console.log("Selected marque:", marque);
     })
+    // Event delegation for select elements within the form
+    this.form.addEventListener('change', (event) => {
+      if (event.target.tagName === 'SELECT') {
+        //console.log('Change event fired on select');
+        //console.log('Select element name:', event.target.name);
+        if (event.target.name === 'marque[]') { // Check if the changed select is the 'marque'
+          //console.log('Change event fired on marque');
+          this.loadModels();
+        } else {
+          this.loadForm(); // Handle changes for other select elements
+        }
+      }
+    });
 
   }
   // Loads form data asynchronously
@@ -58,7 +72,6 @@ export default class Filter {
   }
   // Loads content based on a given URL
   async loadUrl(url) {
-    //this.showLoader()
     const ajaxUrl = url + '&ajax=1'
     const response = await fetch(ajaxUrl, {
       headers: {
@@ -67,6 +80,7 @@ export default class Filter {
     })
     if (response.status >= 200 && response.status < 300) {
       const data = await response.json()
+      //console.log(data)
       this.content.innerHTML = data.content
       this.sorting.innerHTML = data.sorting
       this.pagination.innerHTML = data.pagination
@@ -103,42 +117,72 @@ export default class Filter {
     loader.style.display = 'none'
   }
   // Updates the price slider
-  updatePrix([prixmin, prixmax]) {
+  updatePrix(data) {
     const prixSlider = document.getElementById('prix-slider')
     if (prixSlider === null) {
       return
     }
     prixSlider.noUiSlider.updateOptions({
       reange: {
-        min: [prixmin],
-        max: [prixmax]
+        min: data.prixmin,
+        max: data.prixmax,
       }
     })
   }
   // Updates the km slider
-  updateKm([kmmin, kmmax]) {
+  updateKm(data) {
     const kmSlider = document.getElementById('km-slider')
     if (kmSlider === null) {
       return
     }
     kmSlider.noUiSlider.updateOptions({
       reange: {
-        min: [kmmin],
-        max: [kmmax]
+        min: data.kmmin,
+        max: data.kmmax
       }
     })
   }
   // Updates the year slider
-  updateAnnee([anneemin, anneemax]) {
+  updateAnnee(data) {
     const anneeSlider = document.getElementById('annee-slider')
     if (anneeSlider === null) {
       return
     }
     anneeSlider.noUiSlider.updateOptions({
       reange: {
-        min: [anneemin],
-        max: [anneemax]
+        min: data.anneemin,
+        max: data.anneemax
       }
     })
+  }
+
+  async loadModels() {
+    const marqueId = this.form.querySelector('select[name="marque[]"]').value;
+    const url = '/modeles/fetch?marqueId=' + marqueId; // New route for fetching models
+
+    const response = await fetch(url, {
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      }
+    });
+
+    if (response.status >= 200 && response.status < 300) {
+      const data = await response.json();
+      this.updateModelsSelect(data); // Update the 'modele' select box
+    } else {
+      console.error(response);
+    }
+  }
+
+  updateModelsSelect(models) {
+    const modeleSelect = this.form.querySelector('select[name="modele[]"]');
+    modeleSelect.innerHTML = ''; // Clear existing options
+
+    models.forEach(model => {
+      const option = document.createElement('option');
+      option.value = model.id;
+      option.text = model.nom;
+      modeleSelect.add(option);
+    });
   }
 }
