@@ -59,7 +59,7 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 - serveur Web local: [XAMPP 8.2.4-0](https://www.apachefriends.org/download.html)
 
-- langage de scripts généraliste: [PHP 8.3.2](https://www.php.net/downloads)
+- langage de scripts généraliste: [PHP 8.3.2](https://formulae.brew.sh/formula/php)
 
 - gestion des dépendances en PHP: [Composer version 2.6.5](https://getcomposer.org/download/)
 
