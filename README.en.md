@@ -56,7 +56,7 @@ Contact information, including the form, is also visible at the bottom of each u
 
 - local webserver: [XAMPP 8.2.4-0](https://www.apachefriends.org/download.html)
 
-- general purpose scripting language: [PHP 8.3.2](https://www.php.net/downloads)
+- general purpose scripting language: [PHP 8.3.2](https://formulae.brew.sh/formula/php)
 
 - dependency management in PHP: [Composer version 2.6.5](https://getcomposer.org/download/)
 
