@@ -56,7 +56,7 @@ Informațiile de contact, inclusiv formularul, sunt, de asemenea, vizibile în p
 
 - server web local: [XAMPP 8.2.4-0](https://www.apachefriends.org/download.html)
 
-- limbaj de scripting de uz general: [PHP 8.3.2](https://www.php.net/downloads)
+- limbaj de scripting de uz general: [PHP 8.3.2](https://formulae.brew.sh/formula/php)
 
 - gestionarea dependențelor în PHP: [Composer versiunea 2.6.5](https://getcomposer.org/download/)
 
