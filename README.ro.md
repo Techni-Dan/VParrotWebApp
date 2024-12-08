@@ -44,9 +44,9 @@ Informațiile de contact, inclusiv formularul, sunt, de asemenea, vizibile în p
 
 ## Configurarea mediului de lucru
 
-- dispozitiv: [Apple Mac Mini - Apple M2 Pro](https://www.apple.com/newsroom/2023/01/apple-introduces-new-mac-mini-with-m2-and-m2-pro-more-powerful-capable-and-versatile-than-ever/)
+- pentru Microsoft Windows -> Scoop: [Scoop](https://scoop.sh/#/)
 
-- sistem de operare: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
+- pentru Apple Mac-> Homebrew : [Homebrew](https://brew.sh/)
 
 - IDE: [Visual Studio Code 1.86.0](https://code.visualstudio.com/)
 
@@ -70,7 +70,7 @@ Informațiile de contact, inclusiv formularul, sunt, de asemenea, vizibile în p
 
 - manager de pachete: [yarn 1.22.19](https://classic.yarnpkg.com/lang/en/docs/install/)
 
-- browser web: [Google Chrome 121.0.6167.85](https://www.google.com/intl/ro/chrome/)
+- browser web: [Google Chrome ](https://www.google.com/intl/ro/chrome/)
 
 ## Instalare
 

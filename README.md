@@ -47,13 +47,13 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 ## Configuration de l'environnement de travail
 
-- ordinateur: [Apple Mac Mini - Apple M2 Pro](https://www.apple.com/newsroom/2023/01/apple-introduces-new-mac-mini-with-m2-and-m2-pro-more-powerful-capable-and-versatile-than-ever/)
-
-- système d'exploitation: [macOS Sonoma 14.3](https://developer.apple.com/documentation/macos-release-notes/macos-14_3-release-notes)
-
 - IDE: [Visual Studio Code 1.86.0](https://code.visualstudio.com/)
 
 - IDE: [PhpStorm 2023.3.2](https://www.jetbrains.com/phpstorm/download)
+
+- pour Microsoft Windows -> Scoop: [Scoop](https://scoop.sh/#/)
+
+- pour Apple Mac-> Homebrew : [Homebrew](https://brew.sh/)
 
 - système de contrôle de version: [Git version 2.43.0](https://git-scm.com/)
 
@@ -73,7 +73,7 @@ Les informations de contact, formulaire compris, sont également visibles en bas
 
 - gestionnaire de packages: [yarn 1.22.19](https://classic.yarnpkg.com/lang/en/docs/install/)
 
-- navigateur Web: [Google Chrome 121.0.6167.85](https://www.google.com/intl/fr/chrome/)
+- navigateur Web: [Google Chrome ](https://www.google.com/intl/fr/chrome/)
 
 ## Installation
 
