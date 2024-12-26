@@ -20,7 +20,6 @@
 
 Link to the online version of the project: [Cilck here](https://vparrotwebapp.technidan.com)
 
-The Auto Repair Vincent Parrot project is a web application created for an evaluation during training.
 
 ## Features
 

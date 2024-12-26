@@ -23,7 +23,6 @@
 
 Lien vers la version en ligne du projet: [Cliquez ici](https://vparrotwebapp.technidan.com)
 
-Le projet Garage automobile Vincent Parrot c'est une application web réalisé pour une évaluation en cours de formation.
 
 ## Fonctionnalités
 
